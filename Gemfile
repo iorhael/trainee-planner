@@ -42,6 +42,9 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
+# Centralization of locale data collection for Ruby on Rails. [https://github.com/svenfuchs/rails-i18n]
+gem 'rails-i18n'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
