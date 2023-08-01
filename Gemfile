@@ -76,4 +76,8 @@ group :test do
   gem 'simplecov', require: false
   # Brings back `assigns` and `assert_template` to your Rails tests [https://github.com/rails/rails-controller-testing]
   gem 'rails-controller-testing'
+  # Clean ActiveRecord databases [https://github.com/DatabaseCleaner/database_cleaner-active_record]
+  gem 'database_cleaner-active_record'
+  # Clean Redis databases [https://github.com/DatabaseCleaner/database_cleaner-redis]
+  gem 'database_cleaner-redis'
 end
