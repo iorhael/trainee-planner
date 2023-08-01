@@ -78,6 +78,8 @@ group :development, :test do
   gem 'rubocop', require: false
   # Extension focused on enforcing Rails best practices and coding conventions [https://github.com/rubocop/rubocop-rails]
   gem 'rubocop-rails', require: false
+  # Code style checking for RSpec files [https://github.com/rubocop/rubocop-rspec]
+  gem 'rubocop-rspec', require: false
 end
 
 group :development do
