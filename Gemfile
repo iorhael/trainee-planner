@@ -45,8 +45,11 @@ gem "bootsnap", require: false
 # Centralization of locale data collection for Ruby on Rails. [https://github.com/svenfuchs/rails-i18n]
 gem 'rails-i18n'
 
+# Bootstrap rubygem for Rails [https://github.com/twbs/bootstrap-rubygem]
+gem 'bootstrap', '~> 5.3.0.alpha3'
+
 # Use Sass to process CSS
-# gem "sassc-rails"
+gem "sassc-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem "image_processing", "~> 1.2"
@@ -66,4 +69,3 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
-
