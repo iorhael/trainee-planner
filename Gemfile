@@ -79,4 +79,6 @@ end
 group :test do
   # Acceptance test framework for web applications [https://github.com/teamcapybara/capybara]
   gem 'capybara'
+  #For web application testing [https://github.com/SeleniumHQ/selenium]
+  gem 'selenium-webdriver'
 end
