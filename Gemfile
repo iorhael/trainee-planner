@@ -59,6 +59,8 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   # Factory_bot_rails provides Rails integration for factory_bot [https://github.com/thoughtbot/factory_bot_rails]
   gem 'factory_bot_rails'
+  # Pry is a runtime developer console and IRB alternative [https://github.com/pry/pry]
+  gem 'pry'
 end
 
 group :development do
