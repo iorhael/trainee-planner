@@ -72,4 +72,6 @@ group :test do
   gem 'rspec-rails'
   # Simple one-liner tests for common Rails functionality [https://github.com/thoughtbot/shoulda-matchers]
   gem 'shoulda-matchers', '~> 5.3'
+  # Code coverage for Ruby [https://github.com/simplecov-ruby/simplecov]
+  gem 'simplecov', require: false
 end
