@@ -81,4 +81,6 @@ group :test do
   gem 'capybara'
   #For web application testing [https://github.com/SeleniumHQ/selenium]
   gem 'selenium-webdriver'
+  # Keep your Selenium WebDrivers updated automatically [https://github.com/titusfortner/webdrivers]
+  gem 'webdrivers', '~> 5.0', require: false
 end
