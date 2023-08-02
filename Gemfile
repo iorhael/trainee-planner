@@ -76,3 +76,7 @@ group :development do
   # gem "spring"
 end
 
+group :test do
+  # Acceptance test framework for web applications [https://github.com/teamcapybara/capybara]
+  gem 'capybara'
+end
