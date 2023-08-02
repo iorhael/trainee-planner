@@ -45,6 +45,9 @@ gem "bootsnap", require: false
 # Centralization of locale data collection for Ruby on Rails. [https://github.com/svenfuchs/rails-i18n]
 gem 'rails-i18n'
 
+# Validations for Active Storage [https://github.com/igorkasyanchuk/active_storage_validations]
+gem 'active_storage_validations'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
