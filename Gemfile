@@ -61,6 +61,8 @@ group :development, :test do
   gem 'factory_bot_rails'
   # Pry is a runtime developer console and IRB alternative [https://github.com/pry/pry]
   gem 'pry'
+  # It's a library for generating fake data [https://github.com/faker-ruby/faker]
+  gem 'faker'
 end
 
 group :development do
