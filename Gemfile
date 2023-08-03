@@ -45,6 +45,9 @@ gem "bootsnap", require: false
 # Centralization of locale data collection for Ruby on Rails. [https://github.com/svenfuchs/rails-i18n]
 gem 'rails-i18n'
 
+# Flexible authentication solution for Rails with Warden [https://github.com/heartcombo/devise]
+gem "devise"
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
