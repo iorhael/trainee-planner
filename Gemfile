@@ -48,6 +48,9 @@ gem 'rails-i18n'
 # Validations for Active Storage [https://github.com/igorkasyanchuk/active_storage_validations]
 gem 'active_storage_validations'
 
+# Flexible authentication solution for Rails with Warden [https://github.com/heartcombo/devise]
+gem "devise"
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
