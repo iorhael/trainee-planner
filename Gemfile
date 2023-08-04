@@ -45,15 +45,27 @@ gem "bootsnap", require: false
 # Centralization of locale data collection for Ruby on Rails. [https://github.com/svenfuchs/rails-i18n]
 gem 'rails-i18n'
 
+# Validations for Active Storage [https://github.com/igorkasyanchuk/active_storage_validations]
+gem 'active_storage_validations'
+
+# Flexible authentication solution for Rails with Warden [https://github.com/heartcombo/devise]
+gem "devise"
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
+gem "image_processing", "~> 1.2"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  # Factory_bot_rails provides Rails integration for factory_bot [https://github.com/thoughtbot/factory_bot_rails]
+  gem 'factory_bot_rails'
+  # Pry is a runtime developer console and IRB alternative [https://github.com/pry/pry]
+  gem 'pry'
+  # It's a library for generating fake data [https://github.com/faker-ruby/faker]
+  gem 'faker'
 end
 
 group :development do
@@ -80,4 +92,10 @@ group :test do
   gem 'database_cleaner-active_record'
   # Clean Redis databases [https://github.com/DatabaseCleaner/database_cleaner-redis]
   gem 'database_cleaner-redis'
+  # Acceptance test framework for web applications [https://github.com/teamcapybara/capybara]
+  gem 'capybara'
+  #For web application testing [https://github.com/SeleniumHQ/selenium]
+  gem 'selenium-webdriver'
+  # Keep your Selenium WebDrivers updated automatically [https://github.com/titusfortner/webdrivers]
+  gem 'webdrivers', '~> 5.0', require: false
 end
