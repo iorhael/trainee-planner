@@ -30,7 +30,13 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-# Ignore coverage results.
+#Ignore database files.
+/postgres_db
+
+# Ignore environment variables.
+/.env
+
+# Ignore coverage results
 coverage
 
 # Ignore bootstrap files.
