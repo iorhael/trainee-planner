@@ -72,6 +72,8 @@ group :development, :test do
   gem 'pry'
   # It's a library for generating fake data [https://github.com/faker-ruby/faker]
   gem 'faker'
+  # A Ruby gem to load environment variables from `.env` [https://github.com/bkeepers/dotenv]
+  gem 'dotenv-rails'
 end
 
 group :development do
