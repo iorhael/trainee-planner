@@ -1,0 +1,7 @@
+/.git
+/.gitignore
+/.gitattributes
+/.github
+/.env
+/.env.example
+/postgres_db

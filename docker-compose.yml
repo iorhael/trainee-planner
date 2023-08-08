@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  app:
+    container_name: planner_app
+    build: .
+    environment:
+      - POSTGRES_HOST=db
+    env_file:
+      - ./.env
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+    ports:
+      - 3000:3000
+
+  db:
+    container_name: postgres_db
+    image: postgres:15
+    env_file:
+     - ./.env
+    volumes:
+      - ./postgres_db:/var/lib/postgresql/data
+    ports:
+      - 5433:5432
