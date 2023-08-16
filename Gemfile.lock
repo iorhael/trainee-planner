@@ -73,6 +73,8 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.4)
       public_suffix (>= 2.0.2, < 6.0)
+    ast (2.4.2)
+    base64 (0.1.1)
     bcrypt (3.1.19)
     bindex (0.8.1)
     bootsnap (1.16.0)
@@ -143,6 +145,8 @@ GEM
       activesupport (>= 5.0.0)
     jsbundling-rails (1.1.2)
       railties (>= 6.0.0)
+    json (2.6.3)
+    language_server-protocol (3.17.0.3)
     loofah (2.21.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -171,6 +175,10 @@ GEM
     nokogiri (1.15.3-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    parallel (1.23.0)
+    parser (3.2.2.3)
+      ast (~> 2.4.1)
+      racc
     pg (1.5.3)
     pry (0.14.2)
       coderay (~> 1.1)
@@ -217,6 +225,7 @@ GEM
       rake (>= 12.2)
       thor (~> 1.0)
       zeitwerk (~> 2.5)
+    rainbow (3.1.1)
     rake (13.0.6)
     redis (5.0.6)
       redis-client (>= 0.9.0)
@@ -246,33 +255,8 @@ GEM
       rspec-mocks (~> 3.12)
       rspec-support (~> 3.12)
     rspec-support (3.12.1)
-    ruby-vips (2.1.4)
-      ffi (~> 1.12)
-    rubyzip (2.3.2)
-    selenium-webdriver (4.11.0)
-      rexml (~> 3.2, >= 3.2.5)
-      rubyzip (>= 1.2.2, < 3.0)
-      websocket (~> 1.0)
-    shoulda-matchers (5.3.0)
-      activesupport (>= 5.2.0)
-    simplecov (0.22.0)
-      docile (~> 1.1)
-      simplecov-html (~> 0.11)
-      simplecov_json_formatter (~> 0.1)
-    simplecov-html (0.12.3)
-    simplecov_json_formatter (0.1.4)
-    regexp_parser (2.8.1)
-    reline (0.3.7)
-      io-console (~> 0.5)
-    responders (3.1.0)
-      actionpack (>= 5.2)
-      railties (>= 5.2)
-    rexml (3.2.6)
-    regexp_parser (2.8.1)
-    reline (0.3.7)
-      io-console (~> 0.5)
-    rexml (3.2.6)
-    rubocop (1.55.1)
+    rubocop (1.56.0)
+      base64 (~> 0.1.1)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
       parallel (~> 1.10)
@@ -305,6 +289,14 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    shoulda-matchers (5.3.0)
+      activesupport (>= 5.2.0)
+    simplecov (0.22.0)
+      docile (~> 1.1)
+      simplecov-html (~> 0.11)
+      simplecov_json_formatter (~> 0.1)
+    simplecov-html (0.12.3)
+    simplecov_json_formatter (0.1.4)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -322,6 +314,7 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    unicode-display_width (2.4.2)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.0)
@@ -367,13 +360,12 @@ DEPENDENCIES
   rails-controller-testing
   rails-i18n
   rspec-rails
-  selenium-webdriver
-  shoulda-matchers (~> 5.3)
-  simplecov
-  selenium-webdriver
   rubocop
   rubocop-rails
   rubocop-rspec
+  selenium-webdriver
+  shoulda-matchers (~> 5.3)
+  simplecov
   sprockets-rails
   stimulus-rails
   turbo-rails
