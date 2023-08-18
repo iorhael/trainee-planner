@@ -43,7 +43,7 @@ module TraineePlanner
       system("bundle exec rubocop -A --fail-level=E #{parsable_files.shelljoin}", exception: true)
     end
 
-    config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
+    config.i18n.load_path += Dir[Rails.root.join('my/locales/*.{rb,yml}')]
     config.i18n.available_locales = %i[en ru]
     config.i18n.default_locale = :en
 

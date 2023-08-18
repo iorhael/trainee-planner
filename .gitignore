@@ -37,7 +37,7 @@
 /.env
 
 # Ignore coverage results
-coverage
+/coverage
 
 # Ignore bootstrap files.
 /app/assets/builds/*
