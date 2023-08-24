@@ -1,6 +1,12 @@
 name: Run Tests
 on: push
 
+env:
+  RAILS_ENV: test
+  POSTGRES_HOST: localhost
+  POSTGRES_USER: postgres
+  POSTGRES_PASSWORD: password
+
 jobs:
   rspec:
     permissions: write-all
@@ -30,14 +36,16 @@ jobs:
         with:
           bundler-cache: true
 
-      - name: Setup Database and Run Tests
-        env:
-          RAILS_ENV: test
-          POSTGRES_HOST: localhost
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: password
-        run: |
+      - name: Setup Database
+        run:
           bin/rails db:setup
+
+      - name: Precompile assets
+        run:
+          bin/rails assets:precompile
+
+      - name: Run tests
+        run:
           bundle exec rspec
 
       - uses: joshmfrankel/simplecov-check-action@main
