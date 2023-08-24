@@ -106,8 +106,6 @@ group :test do
   gem 'rails-controller-testing'
   # Clean ActiveRecord databases [https://github.com/DatabaseCleaner/database_cleaner-active_record]
   gem 'database_cleaner-active_record'
-  # Clean Redis databases [https://github.com/DatabaseCleaner/database_cleaner-redis]
-  gem 'database_cleaner-redis'
   # Acceptance test framework for web applications [https://github.com/teamcapybara/capybara]
   gem 'capybara'
   # For web application testing [https://github.com/SeleniumHQ/selenium]
