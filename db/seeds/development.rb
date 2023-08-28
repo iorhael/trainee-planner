@@ -11,3 +11,12 @@ rescue ActiveRecord::RecordInvalid => e
 end
 
 %w[Personal Work Rest].each { |category| Category.find_or_create_by!(name: category) }
+
+5.times do
+  Event.create(
+    name: Faker::Lorem.sentence(word_count: 2),
+    datetime: Faker::Date.between(from: DateTime.now.prev_day, to: DateTime.now.next_day),
+    category: Category.all.sample,
+    user: User.all.sample
+  )
+end
