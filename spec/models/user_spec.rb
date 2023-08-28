@@ -28,4 +28,10 @@ RSpec.describe User do
       it { expect(user.last_name).to be_a String }
     end
   end
+
+  describe 'associations' do
+    let(:user) { build(:user) }
+
+    it { expect(user).to have_many(:events).dependent(:destroy) }
+  end
 end

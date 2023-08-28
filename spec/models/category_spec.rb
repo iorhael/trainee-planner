@@ -38,4 +38,10 @@ RSpec.describe Category do
       it { expect(category.name).to eql 'Rest' }
     end
   end
+
+  describe 'associations' do
+    let(:category) { build(:category) }
+
+    it { expect(category).to have_many(:events).dependent(:destroy) }
+  end
 end
