@@ -1,0 +1,45 @@
+<main class="w-20 m-auto" style="max-width: 330px; padding: 15px;">
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <div class="row justify-content-center align-items-center">
+    <div class="border container p-4" style="border-radius: 30px;">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <div align="center"><h1>Edit <%= resource_name.to_s.humanize %></h1></div>
+
+        <div class="field">
+          <%= f.text_field :first_name, class: "form-control", placeholder: "First name", autofocus: true %>
+        </div>
+
+        <div class="field" style="margin-top: 20px;">
+          <%= f.text_field :last_name, class: "form-control", placeholder: "Last name" %>
+        </div>
+
+        <div class="field" style="margin-top: 20px;">
+          <%= f.email_field :email, class: "form-control", placeholder:"Email", autocomplete: "email" %>
+        </div>
+
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+        <% end %>
+
+        <div class="field" style="margin-top: 20px;">
+          <%= f.password_field :password, class:"form-control", placeholder: "New password"%>
+        </div>
+
+        <div class="field" style="margin-top: 20px;">
+          <%= f.password_field :password_confirmation, class:"form-control", placeholder: "Password confirmation"%>
+        </div>
+
+        <div class="field" style="margin-block: 20px;">
+          <%= f.password_field :current_password, class:"form-control", placeholder: "Current password"%>
+        </div>
+
+        <%= f.submit "Update", class: 'btn btn-primary w-100 py-2'%>
+      <% end %>
+      <div style="margin-top:10px;">
+        <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" },
+        method: :delete, class: 'btn btn-danger w-100' %>
+      </div>
+      <div align="center"><%= link_to "Back", :back %></div>
+    </div>
+  </div>
+</main>
