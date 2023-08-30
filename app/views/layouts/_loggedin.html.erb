@@ -1,0 +1,20 @@
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="#">Me</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Event</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Categories</a>
+    </li>
+  </ul>
+</div>
+<div class="d-flex align-items-end">
+  <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-small btn-info" %>
+  <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-small btn-secondary mx-2" %>
+</div>

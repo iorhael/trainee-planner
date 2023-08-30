@@ -1,0 +1,10 @@
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand">Event Planner</a>
+    <% if current_user %>
+      <%= render 'layouts/loggedin' %>
+    <% else %>
+      <%= render 'layouts/registration' %>
+    <% end %>
+  </div>
+</nav>
