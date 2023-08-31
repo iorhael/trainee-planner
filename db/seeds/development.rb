@@ -9,3 +9,5 @@
 rescue ActiveRecord::RecordInvalid => e
   Rails.logger.debug e.message
 end
+
+%w[Personal Work Rest].each { |category| Category.find_or_create_by!(name: category) }
