@@ -30,4 +30,10 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  nav:
+    app_name: "Event Planner"
+    en: "EN"
+    ru: "RU"
+    language: "Language"
+  foot:
+    see_other: "See my other projects:"
