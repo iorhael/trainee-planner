@@ -4,7 +4,7 @@ class CreateEvents < ActiveRecord::Migration[7.0]
   def change
     create_table :events do |t|
       t.string :name, null: false
-      t.datetime :datetime, null: false
+      t.datetime :event_time, null: false
       t.text :description
       t.datetime :reminder_time
 

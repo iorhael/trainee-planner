@@ -23,7 +23,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_25_071027) do
 
   create_table "events", force: :cascade do |t|
     t.string "name", null: false
-    t.datetime "datetime", null: false
+    t.datetime "event_time", null: false
     t.text "description"
     t.datetime "reminder_time"
     t.bigint "category_id", null: false
