@@ -1,0 +1,14 @@
+.notifications {
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+}
+
+.alert {
+    max-width: 350px;
+    margin-bottom: 0px;
+}
+
+.alert > li {
+    margin-left: 10px;
+}
