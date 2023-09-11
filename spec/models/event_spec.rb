@@ -11,6 +11,7 @@ RSpec.describe Event do
 
   describe 'validations' do
     it { expect(event).to validate_presence_of :name }
+    it { expect(event).to validate_presence_of :event_time }
   end
 
   describe 'event_time validations' do
@@ -18,18 +19,6 @@ RSpec.describe Event do
       let(:event) { build(:event, event_time: DateTime.tomorrow) }
 
       it { expect(event).to be_valid }
-    end
-
-    context 'when event_time is nil' do
-      let(:event) { build(:event, event_time: nil) }
-
-      it { expect(event).not_to be_valid }
-
-      it 'sets an error message for the event_time field' do
-        event.validate
-
-        expect(event.errors[:event_time]).to eq ["can't be blank"]
-      end
     end
 
     context 'when event_time in the past' do
@@ -46,10 +35,22 @@ RSpec.describe Event do
   end
 
   describe 'reminder_time validations' do
-    context 'when reminder_time before event_time' do
+    context 'when reminder_time before event_time and not in the past' do
       let(:event) { build(:event, event_time: DateTime.tomorrow + 1, reminder_time: DateTime.tomorrow) }
 
       it { expect(event).to be_valid }
+    end
+
+    context 'when reminder_time in the past' do
+      let(:event) { build(:event, reminder_time: DateTime.yesterday) }
+
+      it { expect(event).not_to be_valid }
+
+      it 'sets an error message for the event_time field' do
+        event.validate
+
+        expect(event.errors[:reminder_time]).to eq ["can't be in the past"]
+      end
     end
 
     context 'when reminder_time is after event_time' do
