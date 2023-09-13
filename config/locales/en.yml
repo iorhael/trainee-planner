@@ -79,6 +79,13 @@ en:
       language: Language
       en: EN
       ru: RU
+    welcome:
+      app_name: Event planner
+      description:
+        This application will help you efficiently organize your time and will always tell you
+        about a business meeting, going to the dentistor a friend's birthday. You no longer need
+        to keep a lot of events in your head, because this is the work of the "Event planner".
+      sign_up: Sign up
     registration:
       sign_in: Sign in
       sign_up: Sign up

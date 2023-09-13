@@ -3,24 +3,28 @@
 require 'rails_helper'
 
 RSpec.describe 'Homes' do
-  describe 'start page' do
-    before { visit root_path }
+  let(:user) { create(:user) }
 
-    it { expect(page).to have_xpath "//div[contains(@class, 'container')]" }
-    it { expect(page).to have_link 'Event Planner' }
-    it { expect(page).to have_link 'Language' }
-    it { expect(page).to have_link 'Iorhael' }
+  before do
+    login_as(user)
+    visit root_path
+  end
 
-    describe 'click on the app_name link' do
-      before { click_link 'Event Planner' }
+  describe 'app_name link' do
+    before { click_link 'Event planner' }
 
-      it { expect(page).to have_current_path('/en') }
-    end
+    it { expect(page).to have_current_path('/en') }
+  end
 
-    describe 'dropdown menu of language button' do
-      before { click_link 'Language' }
+  describe 'dropdown menu of language button' do
+    before { click_link 'Language' }
 
-      it { expect(page).to have_xpath "//ul[contains(@class,'dropdown-menu')]" }
-    end
+    it { expect(page).to have_xpath "//ul[contains(@class,'dropdown-menu')]" }
+  end
+
+  describe 'dropdown menu of profile avatar' do
+    before { find('img').click }
+
+    it { expect(page).to have_xpath "//ul[contains(@class,'dropdown-menu')]" }
   end
 end

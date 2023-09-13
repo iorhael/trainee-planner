@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'LanguageSwitchings' do
+RSpec.describe 'Language switchings' do
   describe 'language link' do
     before { visit root_path }
 
