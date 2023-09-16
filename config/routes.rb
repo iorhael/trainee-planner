@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   # root "articles#index"
   scope '(:locale)', locale: /#{I18n.available_locales.join('|')}/ do
     root to: 'home#index'
+    devise_for :users, path: '', controllers: { registrations: 'users/registrations' }
   end
 end
