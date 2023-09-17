@@ -8,5 +8,6 @@ class User < ApplicationRecord
 
   validates :first_name, presence: true
 
-  has_many :events, dependent: :destroy
+  has_many :categories, dependent: :destroy
+  has_many :events, through: :categories
 end

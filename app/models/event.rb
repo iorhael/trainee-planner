@@ -7,6 +7,5 @@ class Event < ApplicationRecord
   validates_with EventsValidator::ReminderTimeInPast, if: :reminder_time_changed?
   validates_with EventsValidator::ReminderTimeAfterEventTime
 
-  belongs_to :user
   belongs_to :category
 end

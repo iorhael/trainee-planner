@@ -10,13 +10,16 @@ rescue ActiveRecord::RecordInvalid => e
   Rails.logger.debug e.message
 end
 
-categories = %w[Personal Work Rest].map { |category| Category.find_or_create_by!(name: category) }
+users_categories = %w[Personal Work Rest].map do |category|
+  users.map { |user| Category.find_or_create_by!(name: category, user:) }
+end.flatten
 
-5.times do
-  Event.create!(
-    name: Faker::Lorem.sentence(word_count: 2),
-    event_time: Faker::Time.between(from: DateTime.now + 1.minute, to: DateTime.now.days_since(7)),
-    category: categories.sample,
-    user: users.sample
-  )
+users_categories.each do |user_category|
+  10.times do
+    Event.create!(
+      name: Faker::Lorem.sentence(word_count: 2),
+      event_time: Faker::Time.between(from: DateTime.now + 1.minute, to: DateTime.now.days_since(7)),
+      category: user_category
+    )
+  end
 end

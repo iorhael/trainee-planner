@@ -4,7 +4,6 @@ FactoryBot.define do
   factory :event do
     name { Faker::Lorem.sentence(word_count: 2) }
     event_time { Faker::Time.between(from: DateTime.now + 1.minute, to: DateTime.now.days_since(7)) }
-    user { association :user }
     category { association :category }
   end
 
