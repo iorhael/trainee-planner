@@ -96,6 +96,17 @@ en:
       are_you_sure: Are you sure? This will delete all related events.
     index:
       add: Add category
+  kaminari:
+    first_page:
+      first: First
+    last_page:
+      last: Last
+    next_page:
+      next: Next
+    prev_page:
+      previous: Previous
+    gap:
+      truncate: '...'
   layouts:
     header:
       app_name: Event planner

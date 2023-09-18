@@ -5,7 +5,7 @@ class CategoriesController < ApplicationController
   before_action :set_category, only: %i[update destroy]
 
   def index
-    @categories = current_user.categories
+    @categories = current_user.categories.page(params[:page]).per(params[:per_page])
   end
 
   def new

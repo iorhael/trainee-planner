@@ -13,5 +13,6 @@
                           locals: { target_id: 'new-category-modal', modal_type: 'create', category: Category.new } %>
     </div>
     <%= render partial: 'table' %>
+    <%= paginate @categories %>
   </div>
 <% end %>

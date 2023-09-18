@@ -95,6 +95,17 @@ ru:
       are_you_sure: Вы уверены? Все связанные события будут удалены.
     index:
       add: Добавить категорию
+  kaminari:
+    first_page:
+      first: Первая
+    last_page:
+      last: Последняя
+    next_page:
+      next: След
+    prev_page:
+      previous: Пред
+    gap:
+      truncate: '...'
   layouts:
     header:
       app_name: Планировщик событий

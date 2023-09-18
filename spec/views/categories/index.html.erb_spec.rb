@@ -13,7 +13,7 @@ RSpec.describe 'categories/index.html.erb' do
     sign_in(user)
     allow(view).to receive(:render).with(any_args).and_call_original
     allow(view).to receive(:render).with(hash_including(partial: 'form_modal'))
-    assign(:categories, categories)
+    assign(:categories, Kaminari.paginate_array(categories).page(1))
     render template: 'categories/index'
   end
 
