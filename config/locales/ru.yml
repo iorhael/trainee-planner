@@ -1,8 +1,96 @@
 ru:
-  nav:
-    app_name: "Планировщик Событий"
-    en: "АНГ"
-    ru: "РУС"
-    language: "Язык"
-  foot:
-    see_other: "Смотрите другие проекты:"
+  activerecord:
+    models:
+      user:
+    attributes:
+      user:
+        first_name: Имя
+        last_name: Фамилия
+        email: Электронная почта
+        password: Пароль
+        new_password: Новый пароль
+        password_confirmation: Подтверждение пароля
+        current_password: Текущий пароль
+  users:
+    registrations:
+      new:
+        sign_up_title: Регистрация
+        password_confirmation: Подтверждение пароля
+        sign_up_button: Зарегистрироваться
+      edit:
+        title: Изменить пользователя
+        update: Обновить
+        cancel_account: Удалить мой аккаунт
+        confirm: Вы уверены?
+        back: Назад
+    sessions:
+      new:
+        sign_in_title: Вход
+        remember_me: Запомнить меня
+        sign_in_button: Войти
+    shared:
+      links:
+        log_in: Войти
+        sign_up: Зарегистрироваться
+        forgot_password: Забыли пароль?
+        receive_confirmation_instructions: Не получили инструкций подтверждения?
+        receive_unlock_instructions: Не получили инструкций разблокировки?
+        sign_in_with: Войти с
+    unlocks:
+      new:
+        title: Повторно отправить инструкции по разблокировке
+        resend_instructions: Повторно отправить инструкции по разблокировке
+    confirmations:
+      new:
+        resend_instructions: Послать инструкции подтверждения повторно
+    mailer:
+      confirmation_instructions:
+        welcome: Добро пожаловать
+        confirm_account_email: 'Вы можете подтвердить вашу электронную почту по ссылке ниже:'
+      email_chaged:
+        welcome: Здравствуйте
+        contacting_to_notify: Мы извещаем вас о том, что ваша почта была изменена на
+      password_change:
+        welcome: Здравствуйте
+        contacting_to_notify: Мы извещаем вас о том, что ваш пароль был изменён.
+      reset_password_instructions:
+        welcome: Здравствуйте
+        someone_requested: Кто-то запрашивал ссылку на изменение пароля. Вы можете сделать это по ссылке ниже.
+        change_password: Изменить пароль
+        didnt_request: Если вы не запрашивали это, пожалуйста, проигнорируйте это сообщение.
+        access_link_to_change: Ваш пароль не изменится, пока вы не перейдете по ссылке выше и не создадите новый.
+      unlock_instructions:
+        welcome: Здравствуйте
+        account_locked: Ваша учетная запись заблокирована из-за слишком большого количества неудачных попыток входа.
+        click_to_unlock: 'Нажмите на ссылку ниже, чтобы разблокировать свою учетную запись:'
+        unlock_account: Разблокировать мою учетную запись
+    passwords:
+      edit:
+        title: Изменение пароля
+        change_password: Изменить мой пароль
+      new:
+        title: Забыли пароль?
+        send_instructions: Отправьте мне инструкции по сбросу пароля
+  layouts:
+    header:
+      app_name: Планировщик событий
+    locales:
+      language: Язык
+      en: АНГ
+      ru: РУС
+    welcome:
+      app_name: Планировщик событий
+      description:
+        Это приложение поможет вам эффективно организовать свое время и всегда подскажет
+        о деловой встрече, походе к стоматологу или дне рождения друга. Вам больше не нужно
+        держать в голове множество событий, ведь это работа "Планировщика событий".
+      sign_up: Зарегистрироваться
+    registration:
+      sign_in: Войти
+      sign_up: Зарегистрироваться
+    user_dropdown:
+      profile_drop:
+        edit: Редактировать профиль
+        sign_out: Выйти
+    footer:
+      see_other: 'Посмотрите другие проекты:'

@@ -1,1 +1,4 @@
-<div class="contaier p-3"></div>
+<% if current_user %>
+<% else %>
+  <%= render partial: 'layouts/welcome' %>
+<% end %>

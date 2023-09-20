@@ -12,3 +12,7 @@ AllCops:
 Metrics/MethodLength:
   Exclude:
     - db/migrate/**/*
+
+Rails/LexicallyScopedActionFilter:
+  Exclude:
+    - app/controllers/**/*
