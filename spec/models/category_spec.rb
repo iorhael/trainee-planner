@@ -15,7 +15,7 @@ RSpec.describe Category do
     describe 'uniqueness validation' do
       subject(:category) { create(:category) }
 
-      it { expect(category).to validate_uniqueness_of(:name).case_insensitive }
+      it { expect(category).to validate_uniqueness_of(:name).scoped_to(:user_id).case_insensitive }
     end
   end
 
@@ -40,6 +40,7 @@ RSpec.describe Category do
   end
 
   describe 'associations' do
+    it { is_expected.to belong_to(:user) }
     it { expect(category).to have_many(:events).dependent(:destroy) }
   end
 end

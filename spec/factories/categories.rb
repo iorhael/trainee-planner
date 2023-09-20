@@ -3,6 +3,7 @@
 FactoryBot.define do
   factory :category do
     name { %w[Personal Work Rest].sample }
+    user { association :user }
   end
 
   trait :personal do

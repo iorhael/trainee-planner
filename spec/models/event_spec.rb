@@ -81,7 +81,6 @@ RSpec.describe Event do
   end
 
   describe 'associations' do
-    it { is_expected.to belong_to(:user) }
     it { is_expected.to belong_to(:category) }
   end
 end
