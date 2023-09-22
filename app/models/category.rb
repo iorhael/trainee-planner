@@ -5,4 +5,6 @@ class Category < ApplicationRecord
 
   belongs_to :user
   has_many :events, dependent: :destroy
+
+  default_scope { order(:id) }
 end

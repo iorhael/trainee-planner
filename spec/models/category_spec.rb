@@ -43,4 +43,17 @@ RSpec.describe Category do
     it { is_expected.to belong_to(:user) }
     it { expect(category).to have_many(:events).dependent(:destroy) }
   end
+
+  describe 'scopes' do
+    describe 'default_scope' do
+      subject(:default_scope) { described_class.all }
+
+      let!(:first_category) { create(:category) }
+      let!(:last_category) { create(:category) }
+
+      before { first_category.update(name: 'Updated') }
+
+      it { expect(default_scope).to eq([first_category, last_category]) }
+    end
+  end
 end
