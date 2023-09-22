@@ -1,4 +1,5 @@
 <% if current_user %>
+  <%= render partial: 'authorized' %>
 <% else %>
-  <%= render partial: 'layouts/welcome' %>
+  <%= render partial: 'not_authorized' %>
 <% end %>
