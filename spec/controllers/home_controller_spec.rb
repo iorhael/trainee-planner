@@ -8,10 +8,11 @@ RSpec.describe HomeController do
 
     render_views
 
-    before { get :index }
-
     context 'when user is authentificated' do
-      before { sign_in(user) }
+      before do
+        sign_in(user)
+        get :index
+      end
 
       it 'returns a 200' do
         expect(response).to have_http_status(:ok)
@@ -19,10 +20,20 @@ RSpec.describe HomeController do
 
       it 'render index template' do
         expect(response).to render_template('index')
+      end
+
+      it 'render authorized partial' do
+        expect(response).to render_template(partial: '_authorized')
+      end
+
+      it 'assigns @counter' do
+        expect(assigns(:events_counter)).to be_a(UserServices::EventsCounter)
       end
     end
 
     context 'when user is not authentificated' do
+      before { get :index }
+
       it 'returns a 200' do
         expect(response).to have_http_status(:ok)
       end
@@ -31,8 +42,8 @@ RSpec.describe HomeController do
         expect(response).to render_template('index')
       end
 
-      it 'render welcome partial' do
-        expect(response).to render_template(partial: '_welcome')
+      it 'render not_authorized partial' do
+        expect(response).to render_template(partial: '_not_authorized')
       end
     end
   end

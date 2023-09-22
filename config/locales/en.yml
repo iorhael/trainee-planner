@@ -39,7 +39,7 @@ en:
   home:
     authorized:
       hello: Hello
-      events_count: You have %{in_future} events in future ( %{today} today )
+      events_count: You have %{in_future} events in future (%{today} today)
     not_authorized:
       app_name: Event planner
       description:

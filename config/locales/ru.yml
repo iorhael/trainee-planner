@@ -39,7 +39,7 @@ ru:
   home:
     authorized:
       hello: Здравствуйте
-      events_count: У вас %{in_future} предстоящих событий ( %{today} сегодня )
+      events_count: У вас %{in_future} предстоящих событий (%{today} сегодня)
     not_authorized:
       app_name: Планировщик событий
       description:

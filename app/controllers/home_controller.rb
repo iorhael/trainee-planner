@@ -2,6 +2,6 @@
 
 class HomeController < ApplicationController
   def index
-    @events_counter = EventsCounterService.new(current_user) if current_user
+    @events_counter = UserServices::EventsCounter.new(user: current_user) if current_user
   end
 end
