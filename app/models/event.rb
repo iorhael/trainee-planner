@@ -8,4 +8,6 @@ class Event < ApplicationRecord
   validates_with EventsValidator::ReminderTimeAfterEventTime, if: :event_time
 
   belongs_to :category
+
+  scope :ordered_by_time, -> { order(event_time: :asc) }
 end
