@@ -61,7 +61,7 @@ RSpec.describe Event do
       it 'sets an error message for the event_time field' do
         event.validate
 
-        expect(event.errors[:reminder_time]).to eq ["can't be after event_time"]
+        expect(event.errors[:reminder_time]).to eq ["can't be after event time"]
       end
     end
   end

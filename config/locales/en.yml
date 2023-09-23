@@ -135,6 +135,17 @@ en:
     event_time_in_past: can't be in the past
     reminder_time_after_event_time: can't be after event time
     reminder_time_in_past: can't be in the past
+  kaminari:
+    first_page:
+      first: First
+    last_page:
+      last: Last
+    next_page:
+      next: Next
+    prev_page:
+      previous: Previous
+    gap:
+      truncate: '...'
   layouts:
     header:
       app_name: Event planner
