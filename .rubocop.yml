@@ -16,3 +16,6 @@ Metrics/MethodLength:
 Rails/LexicallyScopedActionFilter:
   Exclude:
     - app/controllers/**/*
+
+RSpec/MultipleMemoizedHelpers:
+  Max: 8
