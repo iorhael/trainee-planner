@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   scope '(:locale)', locale: /#{I18n.available_locales.join('|')}/, defaults: { locale: I18n.default_locale } do
     root to: 'home#index'
     devise_for :users, path: '', controllers: { registrations: 'users/registrations' }
+    resources :categories, only: %i[index create update destroy]
   end
 end

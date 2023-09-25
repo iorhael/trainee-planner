@@ -1,0 +1,19 @@
+<div class="modal fade" id="<%= target_id %>" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <%= form_for category do |form| %>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5"><%= t(".#{modal_type}") %></h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <%= form.text_field :name, class: 'form-control', placeholder: Category.human_attribute_name(:name) %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><%= t('.close_btn') %></button>
+          <%= form.submit class: 'btn btn-primary' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

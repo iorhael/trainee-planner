@@ -2,6 +2,9 @@ en:
   activerecord:
     models:
       user:
+      category:
+        one: Category
+        other: Categories
     attributes:
       user:
         first_name: First name
@@ -11,6 +14,13 @@ en:
         new_password: New password
         password_confirmation: Password confirmation
         current_password: Current password
+      category:
+        name: Name
+  flash:
+    category:
+      create: Category created successfully
+      update: Category updated successfully
+      destroy: Category deleted successfully
   users:
     registrations:
       new:
@@ -72,6 +82,20 @@ en:
       new:
         title: Forgot your password?
         send_instructions: Send me reset password instructions
+  categories:
+    form_modal:
+      create: Create category
+      edit: Edit category
+      close_btn: Close
+    no_categories:
+      empty: Looks like you don't have categories
+      add: Add first category
+    category:
+      edit: Edit
+      delete: Delete
+      are_you_sure: Are you sure? This will delete all related events.
+    index:
+      add: Add category
   layouts:
     header:
       app_name: Event planner

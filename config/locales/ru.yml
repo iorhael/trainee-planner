@@ -2,6 +2,9 @@ ru:
   activerecord:
     models:
       user:
+      category:
+        one: Категория
+        other: Категории
     attributes:
       user:
         first_name: Имя
@@ -11,6 +14,13 @@ ru:
         new_password: Новый пароль
         password_confirmation: Подтверждение пароля
         current_password: Текущий пароль
+      category:
+        name: Название
+  flash:
+    category:
+      create: Категория создана успешно
+      update: Категория обновлена успешно
+      destroy: Категория удалена успешно
   users:
     registrations:
       new:
@@ -71,6 +81,20 @@ ru:
       new:
         title: Забыли пароль?
         send_instructions: Отправьте мне инструкции по сбросу пароля
+  categories:
+    form_modal:
+      create: Создать категорию
+      edit: Редактировать категорию
+      close_btn: Закрыть
+    no_categories:
+      empty: Похоже, что у вас нет категорий
+      add: Добавить первую категорию
+    category:
+      edit: Редактировать
+      delete: Удалить
+      are_you_sure: Вы уверены? Все связанные события будут удалены.
+    index:
+      add: Добавить категорию
   layouts:
     header:
       app_name: Планировщик событий
