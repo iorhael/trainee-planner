@@ -30,8 +30,11 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
-    @category.destroy
-    redirect_to categories_path, info: t('flash.category.destroy'), status: :see_other
+    if @category.destroy
+      redirect_to categories_path, info: t('flash.category.destroy'), status: :see_other
+    else
+      redirect_to categories_path, status: :unprocessable_entity
+    end
   end
 
   private

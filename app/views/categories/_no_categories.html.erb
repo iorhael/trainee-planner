@@ -3,6 +3,6 @@
   <button class='btn btn-outline-primary' data-bs-toggle='modal' data-bs-target='#new-category-modal'>
     <%= t('.add') %>
   </button>
-  <%= render partial: 'form_modal', locals:
-  { target_id: 'new-category-modal', modal_type: 'create', category: Category.new } %>
+  <%= render partial: 'form_modal',
+                      locals: { target_id: 'new-category-modal', modal_type: 'create', category: Category.new } %>
 </div>
