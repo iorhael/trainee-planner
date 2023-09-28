@@ -1,0 +1,18 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col"><%= Category.human_attribute_name(:name) %></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @categories.each_with_index do |category, index| %>
+      <%= render partial: 'form_modal',
+                          locals: { target_id: "#{dom_id(category)}", modal_type: 'edit', category: category } %>
+
+      <%= render partial: 'category', locals: { category: category, index: index } %>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,18 @@
+<% if @categories.empty? %>
+  <%= render partial: 'no_categories' %>
+<% else %>
+  <div class="container p-4">
+    <div class="d-flex flex-row">
+      <p class="fs-1"><%= Category.model_name.human(count: 2) %></p>
+      <div class="container d-flex align-items-center justify-content-end">
+        <button class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#new-category-modal'>
+          <%= t('.add') %>
+        </button>
+      </div>
+      <%= render partial: 'form_modal',
+                          locals: { target_id: 'new-category-modal', modal_type: 'create', category: Category.new } %>
+    </div>
+    <%= render partial: 'table' %>
+    <%= paginate @categories %>
+  </div>
+<% end %>
