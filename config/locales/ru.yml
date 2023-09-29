@@ -5,6 +5,9 @@ ru:
       category:
         one: Категория
         other: Категории
+      event:
+        one: Событие
+        other: События
     attributes:
       user:
         first_name: Имя
@@ -16,11 +19,23 @@ ru:
         current_password: Текущий пароль
       category:
         name: Название
+      event:
+        name: Название
+        event_time: Дата события
+        description: Описание
+        reminder_time: Время напоминания
+        category: Категория
   flash:
     category:
       create: Категория создана успешно
       update: Категория обновлена успешно
       destroy: Категория удалена успешно
+    event:
+      create: Событие создано успешно
+      create_with_unaccessible_category: Извините, вы пытаетесь создать событие, введя недоступную категорию
+      update: Событие обновлено успешно
+      update_with_unaccessible_category: Извините, вы пытаетесь обновить событие, введя недоступную категорию
+      destroy: Событие удалено успешно
   users:
     registrations:
       new:
@@ -95,6 +110,30 @@ ru:
       are_you_sure: Вы уверены? Все связанные события будут удалены.
     index:
       add: Добавить категорию
+  events:
+    table:
+      name: Name
+      category: Category
+      event_time: Event time
+      reminder_time: Reminder time
+    form_modal:
+      create: Создать событие
+      edit: Редактировать событие
+      close_btn: Закрыть
+    no_events:
+      empty: Похоже, что у вас нет событий
+      add: Добавить первое событие
+    event:
+      edit: Редактировать
+      delete: Удалить
+      are_you_sure: Вы уверены?
+    index:
+      title: События
+      create: Создать событие
+  events_validator:
+    event_time_in_past: не может быть в прошлом
+    reminder_time_after_event_time: не может быть после даты события
+    reminder_time_in_past: не может быть в прошлом
   kaminari:
     first_page:
       first: Первая
@@ -109,6 +148,7 @@ ru:
   layouts:
     header:
       app_name: Планировщик событий
+      events: События
     locales:
       language: Язык
       en: АНГ

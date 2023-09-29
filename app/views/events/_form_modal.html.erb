@@ -1,0 +1,36 @@
+<div class="modal fade" id="<%= target_id %>" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <%= form_for event do |form| %>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5"><%= t(".#{modal_type}") %></h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <%= form.text_field :name, class: 'form-control mb-3', placeholder: Event.human_attribute_name(:name) %>
+          <%= form.text_field :event_time,
+                              class: 'form-control mb-3',
+                              placeholder: Event.human_attribute_name(:event_time),
+                              data: { controller: 'datepicker' }%>
+          <%= form.text_field :description,
+                              class: 'form-control mb-3',
+                              placeholder: Event.human_attribute_name(:description) %>
+          <%= form.text_field :reminder_time,
+                              class: 'form-control mb-3',
+                              placeholder: Event.human_attribute_name(:reminder_time),
+                              data: { controller: 'datepicker' } %>
+          <%= form.collection_select :category_id,
+                                      current_user.categories,
+                                      :id,
+                                      :name,
+                                      { placeholder: Category.human_attribute_name(:name) },
+                                      class: 'form-select' %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><%= t('.close_btn') %></button>
+          <%= form.submit class: 'btn btn-primary' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

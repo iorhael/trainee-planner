@@ -13,6 +13,9 @@
         <li class="nav-item">
           <%= link_to Category.model_name.human(count: 2), categories_path, class: 'nav-link' %>
         </li>
+        <li class="nav-item">
+          <%= link_to t('.events'), events_path, class: 'nav-link' %>
+        </li>
       </ul>
         <% if current_user %>
           <%= render partial: 'layouts/user_dropdown' %>

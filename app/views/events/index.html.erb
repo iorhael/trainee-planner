@@ -1,0 +1,18 @@
+<% if @events.empty? %>
+  <%= render partial: 'no_events' %>
+<% else %>
+  <div class="container p-4">
+    <div class="d-flex flex-row">
+      <p class="fs-1"><%= t('.title') %></p>
+      <div class="container d-flex align-items-center justify-content-end">
+        <button class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#new-event-modal'>
+          <%= t('.create') %>
+        </button>
+      </div>
+      <%= render partial: 'form_modal',
+                          locals: { target_id: 'new-event-modal', modal_type: 'create', event: Event.new } %>
+    </div>
+    <%= render partial: 'table' %>
+    <%= paginate @events %>
+  </div>
+<% end %>

@@ -5,7 +5,7 @@ class Event < ApplicationRecord
 
   validates_with EventsValidator::EventTimeInPast
   validates_with EventsValidator::ReminderTimeInPast, if: :reminder_time_changed?
-  validates_with EventsValidator::ReminderTimeAfterEventTime
+  validates_with EventsValidator::ReminderTimeAfterEventTime, if: :event_time
 
   belongs_to :category
 end
