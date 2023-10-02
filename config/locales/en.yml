@@ -5,6 +5,9 @@ en:
       category:
         one: Category
         other: Categories
+      event:
+        one: Event
+        other: Events
     attributes:
       user:
         first_name: First name
@@ -16,11 +19,23 @@ en:
         current_password: Current password
       category:
         name: Name
+      event:
+        name: Name
+        event_time: Event time
+        description: Description
+        reminder_time: Reminder time
+        category: Category
   flash:
     category:
       create: Category created successfully
       update: Category updated successfully
       destroy: Category deleted successfully
+    event:
+      create: Event created successfully
+      create_with_unaccessible_category: Sorry, you trying to create event with unaccessible category
+      update: Event updated successfully
+      update_with_unaccessible_category: Sorry, you trying to update event with unaccessible category
+      destroy: Event deleted successfully
   users:
     registrations:
       new:
@@ -96,6 +111,30 @@ en:
       are_you_sure: Are you sure? This will delete all related events.
     index:
       add: Add category
+  events:
+    table:
+      name: Name
+      category: Category
+      event_time: Event time
+      reminder_time: Reminder time
+    form_modal:
+      create: Create event
+      edit: Edit event
+      close_btn: Close
+    no_events:
+      empty: Looks like you don't have events
+      add: Create first event
+    event:
+      edit: Edit
+      delete: Delete
+      are_you_sure: Are you sure?
+    index:
+      title: Events
+      create: Create event
+  events_validator:
+    event_time_in_past: can't be in the past
+    reminder_time_after_event_time: can't be after event time
+    reminder_time_in_past: can't be in the past
   kaminari:
     first_page:
       first: First
@@ -110,6 +149,7 @@ en:
   layouts:
     header:
       app_name: Event planner
+      events: Events
     locales:
       language: Language
       en: EN

@@ -9,5 +9,6 @@ Rails.application.routes.draw do
     root to: 'home#index'
     devise_for :users, path: '', controllers: { registrations: 'users/registrations' }
     resources :categories, only: %i[index create update destroy]
+    resources :events, only: %i[index show create update destroy]
   end
 end

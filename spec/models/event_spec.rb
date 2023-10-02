@@ -61,7 +61,7 @@ RSpec.describe Event do
       it 'sets an error message for the event_time field' do
         event.validate
 
-        expect(event.errors[:reminder_time]).to eq ["can't be after event_time"]
+        expect(event.errors[:reminder_time]).to eq ["can't be after event time"]
       end
     end
   end
@@ -82,5 +82,16 @@ RSpec.describe Event do
 
   describe 'associations' do
     it { is_expected.to belong_to(:category) }
+  end
+
+  describe 'scopes' do
+    describe '.ordered_by_time' do
+      subject(:ordered_scope) { described_class.ordered_by_time }
+
+      let!(:late_event) { create(:event, event_time: DateTime.now + 2) }
+      let!(:early_event) { create(:event, event_time: DateTime.now + 1) }
+
+      it { expect(ordered_scope).to eq([early_event, late_event]) }
+    end
   end
 end
