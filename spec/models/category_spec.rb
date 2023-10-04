@@ -45,15 +45,15 @@ RSpec.describe Category do
   end
 
   describe 'scopes' do
-    describe 'default_scope' do
-      subject(:default_scope) { described_class.all }
+    describe 'ordered_by_creation_time' do
+      subject(:ordered_scope) { described_class.ordered_by_creation_time }
 
       let!(:first_category) { create(:category) }
       let!(:last_category) { create(:category) }
 
       before { first_category.update(name: 'Updated') }
 
-      it { expect(default_scope).to eq([first_category, last_category]) }
+      it { expect(ordered_scope).to eq([first_category, last_category]) }
     end
   end
 end

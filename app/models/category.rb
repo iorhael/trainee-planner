@@ -8,5 +8,5 @@ class Category < ApplicationRecord
   belongs_to :user
   has_many :events, dependent: :destroy
 
-  default_scope { order(:id) }
+  scope :ordered_by_creation_time, -> { order(:created_at) }
 end
