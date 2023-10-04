@@ -1,0 +1,8 @@
+<div class="container p-4">
+  <h2><p class="text-center"><strong><%= t('.hello') %>, <%= current_user.first_name %></strong></p></h2>
+  <h5>
+    <p class="text-center">
+      <%= t('.events_count', in_future: @events_counter.in_future, today: @events_counter.today ) %>
+    </p>
+  </h5>
+</div>
