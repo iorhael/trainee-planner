@@ -1,0 +1,18 @@
+<%= form_with url: events_path, method: :get, id: 'events-search-form' do |f| %>
+  <div class="row mb-4">
+    <div class="col">
+      <%= f.text_field :name, class: "form-control", placeholder: t('.name') %>
+    </div>
+    <div class="col">
+      <%= f.collection_select :category_name,
+                              current_user.categories,
+                              :name,
+                              :name,
+                              { prompt: t('.select_category'), selected: '', disabled: '' },
+                              class: "form-control" %>
+    </div>
+      <div class="col">
+        <%= f.submit t('.search'), class: "btn btn-info" %>
+      </div>
+    </div>
+<% end %>

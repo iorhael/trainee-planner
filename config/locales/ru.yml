@@ -127,13 +127,17 @@ ru:
       category: Category
       event_time: Event time
       reminder_time: Reminder time
+    search:
+      name: Название
+      select_category: Выберите категорию
+      search: Поиск
     form_modal:
       create: Создать событие
       edit: Редактировать событие
       close_btn: Закрыть
     no_events:
-      empty: Похоже, что у вас нет событий
-      add: Добавить первое событие
+      empty: Здесь нет событий
+      add: Добавить событие
     event:
       edit: Редактировать
       delete: Удалить
