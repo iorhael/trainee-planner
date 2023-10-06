@@ -10,7 +10,7 @@ RSpec.describe 'Event create process' do
   before do
     login_as(user)
     visit events_path
-    click_button 'Create first event'
+    click_button 'Create event'
   end
 
   describe 'create event wiht valid attributes' do

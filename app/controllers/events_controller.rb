@@ -6,10 +6,7 @@ class EventsController < ApplicationController
   before_action :set_category, only: %i[create update]
 
   def index
-    @events = current_user.events
-                          .ordered_by_time
-                          .page(params[:page])
-                          .per(params[:per_page])
+    @events = search(search_params).ordered_by_time.page(params[:page]).per(params[:per_page])
   end
 
   def show; end
@@ -50,6 +47,14 @@ class EventsController < ApplicationController
   end
 
   private
+
+  def search(search_params)
+    SearchService.new(search_params:, default_relation: current_user.events).call
+  end
+
+  def search_params
+    params.permit(:name, :category_name)
+  end
 
   def event_params
     params.require(:event).permit(:name, :event_time, :description, :reminder_time, :category_id)

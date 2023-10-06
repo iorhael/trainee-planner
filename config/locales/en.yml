@@ -128,13 +128,17 @@ en:
       category: Category
       event_time: Event time
       reminder_time: Reminder time
+    search:
+      name: Name
+      select_category: Select category
+      search: Search
     form_modal:
       create: Create event
       edit: Edit event
       close_btn: Close
     no_events:
-      empty: Looks like you don't have events
-      add: Create first event
+      empty: There are no events here
+      add: Create event
     event:
       edit: Edit
       delete: Delete
