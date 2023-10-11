@@ -333,6 +333,7 @@ GEM
     tilt (2.2.0)
     time_difference (0.5.0)
       activesupport
+    timecop (0.9.8)
     timeout (0.4.0)
     turbo-rails (1.4.0)
       actionpack (>= 6.0.0)
@@ -400,6 +401,7 @@ DEPENDENCIES
   sprockets-rails
   stimulus-rails
   time_difference
+  timecop
   turbo-rails
   tzinfo-data
   vcr

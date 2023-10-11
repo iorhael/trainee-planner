@@ -122,4 +122,6 @@ group :test do
   gem 'vcr'
   # Library for stubbing and setting expectations on HTTP requests in Ruby [https://github.com/bblimke/webmock]
   gem 'webmock'
+  # Providing time travel, freezing and acceleration capabilitie [https://github.com/travisjeffery/timecop]
+  gem 'timecop'
 end
