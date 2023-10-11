@@ -118,4 +118,6 @@ group :test do
   gem 'selenium-webdriver'
   # Keep your Selenium WebDrivers updated automatically [https://github.com/titusfortner/webdrivers]
   gem 'webdrivers', '~> 5.0', require: false
+  # Record your test suite's HTTP interactions and replay them during tests [https://github.com/vcr/vcr]
+  gem 'vcr'
 end
