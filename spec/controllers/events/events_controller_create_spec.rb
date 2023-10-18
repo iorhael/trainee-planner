@@ -23,25 +23,15 @@ RSpec.describe EventsController do
       end
     end
 
-    context 'when category is not belong to current user' do
+    context 'when category does not exist for current user' do
       let(:second_user) { create(:user) }
       let(:second_user_category) { create(:category, user: second_user) }
       let(:params) { attributes_for(:event).merge({ category_id: second_user_category }) }
 
       before { sign_in(user) }
 
-      it 'returns status 422' do
-        create_event
-        expect(response).to have_http_status(:unprocessable_entity)
-      end
-
-      it 'set a flash message' do
-        create_event
-        expect(flash[:error]).to eq('Sorry, you trying to create event with unaccessible category')
-      end
-
-      it 'not save event to the database' do
-        expect { create_event }.not_to change(Event, :count)
+      it 'raise ActiveRecord::RecordNotFound exception' do
+        expect { create_event }.to raise_exception(ActiveRecord::RecordNotFound)
       end
     end
 
