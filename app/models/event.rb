@@ -10,4 +10,5 @@ class Event < ApplicationRecord
   belongs_to :category
 
   scope :ordered_by_time, -> { order(event_time: :asc) }
+  scope :in_future, -> { where(event_time: Time.zone.now..) }
 end

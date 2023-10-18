@@ -93,5 +93,17 @@ RSpec.describe Event do
 
       it { expect(ordered_scope).to eq([early_event, late_event]) }
     end
+
+    describe '.in_future' do
+      subject(:in_future_scope) { described_class.in_future }
+
+      let!(:past_event) { build(:event, event_time: DateTime.now - 2.hours) }
+      let!(:future_event) { create(:event, event_time: DateTime.now + 1) }
+
+      before { past_event.save(validate: false) }
+
+      it { expect(in_future_scope).to include(future_event) }
+      it { expect(in_future_scope).not_to include(past_event) }
+    end
   end
 end
