@@ -11,4 +11,5 @@ class Event < ApplicationRecord
 
   scope :ordered_by_time, -> { order(event_time: :asc) }
   scope :in_future, -> { where(event_time: Time.zone.now..) }
+  scope :in_past, -> { where(event_time: ..Time.zone.now) }
 end
