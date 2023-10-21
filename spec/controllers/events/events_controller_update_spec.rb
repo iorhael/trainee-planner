@@ -24,6 +24,30 @@ RSpec.describe EventsController do
       end
     end
 
+    context 'when trying to update event in past' do
+      let(:event) { build(:event, event_time: DateTime.now - 2.hours, category:) }
+      let(:params) { event.attributes.merge(name: 'valid name') }
+
+      before do
+        event.save(validate: false)
+        sign_in(user)
+      end
+
+      it 'redirect to events_path' do
+        update_event
+        expect(response).to redirect_to(events_path)
+      end
+
+      it 'set a flash message' do
+        update_event
+        expect(flash[:error]).to eq('Sorry, but you can update events in the past')
+      end
+
+      it 'not update the event' do
+        expect { update_event }.not_to(change { event.reload.name })
+      end
+    end
+
     context 'when event does not exist for current user' do
       let(:second_user) { create(:user) }
       let(:second_user_category) { create(:category, user: second_user) }

@@ -35,6 +35,29 @@ RSpec.describe EventsController do
       end
     end
 
+    context 'when event in the past' do
+      let(:event) { build(:event, event_time: DateTime.now - 2.hours, category:) }
+
+      before do
+        event.save(validate: false)
+        sign_in(user)
+      end
+
+      it 'return status 200' do
+        expect(response).to have_http_status(:ok)
+      end
+
+      it 'redirect to archive_path' do
+        show_event
+        expect(response).to redirect_to(archive_path(event))
+      end
+
+      it 'sets a flash info message' do
+        show_event
+        expect(flash[:info]).to match(I18n.t('flash.event.moved'))
+      end
+    end
+
     context 'when user is authenticated and event exists for current user' do
       let(:event) { create(:event, category:) }
 

@@ -35,10 +35,10 @@ en:
       update: Category updated successfully
       destroy: Category deleted successfully
     event:
+      moved: This event moved to archive
       create: Event created successfully
-      create_with_unaccessible_category: Sorry, you trying to create event with unaccessible category
       update: Event updated successfully
-      update_with_unaccessible_category: Sorry, you trying to update event with unaccessible category
+      update_in_past: Sorry, but you can update events in the past
       destroy: Event deleted successfully
   data_unavailable: Data is not available
   home:
