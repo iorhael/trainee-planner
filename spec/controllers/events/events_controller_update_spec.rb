@@ -40,7 +40,7 @@ RSpec.describe EventsController do
 
       it 'set a flash message' do
         update_event
-        expect(flash[:error]).to eq('Sorry, but you can update events in the past')
+        expect(flash[:error]).to eq('Sorry, but you can not update events in the past')
       end
 
       it 'not update the event' do
