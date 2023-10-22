@@ -6,7 +6,7 @@ module Weather
     base_uri 'https://api.ambeedata.com/weather'
     headers 'x-api-key': ENV.fetch('AMBEE_API_KEY')
 
-    def initialize(event_time)
+    def initialize(event_time:)
       @event_time = event_time
     end
 
@@ -26,8 +26,8 @@ module Weather
     def build_options
       if event_time < next_hour_date
         options[:query].merge!(
-          from: forecast_time.utc.beginning_of_hour.to_fs(:db),
-          to: forecast_time.utc.beginning_of_hour.to_fs(:db)
+          from: event_time.utc.beginning_of_hour.to_fs(:db),
+          to: event_time.utc.beginning_of_hour.to_fs(:db)
         )
       end
 

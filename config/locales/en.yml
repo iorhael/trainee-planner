@@ -1,4 +1,8 @@
 en:
+  temperature: "%{temperature} °C"
+  humidity: "%{humidity}%"
+  pressure: "%{pressure} Pa"
+  speed: "%{speed} m/s"
   activerecord:
     models:
       user:
@@ -36,6 +40,7 @@ en:
       update: Event updated successfully
       update_with_unaccessible_category: Sorry, you trying to update event with unaccessible category
       destroy: Event deleted successfully
+  data_unavailable: Data is not available
   home:
     authorized:
       hello: Hello
@@ -146,6 +151,13 @@ en:
     index:
       title: Events
       create: Create event
+    weather_widget:
+      example_city: Grodno
+  shared:
+    about_event_widget:
+      about_event: About event
+      no_description: Place for your description
+      back_link: Back to events
   events_validator:
     event_time_in_past: can't be in the past
     reminder_time_after_event_time: can't be after event time

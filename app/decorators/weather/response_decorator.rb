@@ -4,7 +4,7 @@ module Weather
   class ResponseDecorator
     attr_reader :data
 
-    def initialize(data)
+    def initialize(data:)
       @data = data
     end
 
