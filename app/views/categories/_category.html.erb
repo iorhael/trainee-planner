@@ -3,13 +3,13 @@
   <td><%= category.name %>
   <td>
     <%= button_tag t('.edit'),
-                   class: "btn btn-primary",
+                   class: "btn btn-outline-primary",
                    data: { bs_toggle: :modal, bs_target: "##{dom_id(category)}" }%>
   </td>
   <td>
     <%= button_to t('.delete'),
                   category_path(category, locale: I18n.locale),
-                  class: 'btn btn-danger',
+                  class: 'btn btn-outline-danger',
                   data: { confirm: t('.are_you_sure'), turbo_confirm: t('.are_you_sure') },
                   method: :delete %>
   </td>

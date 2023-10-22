@@ -124,8 +124,11 @@ ru:
       edit: Редактировать
       delete: Удалить
       are_you_sure: Вы уверены? Все связанные события будут удалены.
-    index:
+    table:
+      name: Название
       add: Добавить категорию
+    index:
+      title: Категории
   events:
     table:
       name: Название

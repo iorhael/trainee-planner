@@ -125,8 +125,11 @@ en:
       edit: Edit
       delete: Delete
       are_you_sure: Are you sure? This will delete all related events.
-    index:
+    table:
+      name: Name
       add: Add category
+    index:
+      title: Categories
   events:
     table:
       name: Name
