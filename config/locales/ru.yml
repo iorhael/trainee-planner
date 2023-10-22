@@ -134,8 +134,10 @@ ru:
       reminder_time: Время напоминания
     search:
       name: Название
-      select_category: Выберите категорию
-      search: Поиск
+      category: Категория
+      event_time: Время события
+      reminder_time: Время напоминания
+      create: Создать событие
     form_modal:
       create: Создать событие
       edit: Редактировать событие
@@ -157,6 +159,10 @@ ru:
       about_event: О событии
       no_description: Место для вашего описания
       back_link: Назад к событиям
+    events_search:
+      name: Название
+      select_category: Выберите категорию
+      search: Поиск
   events_validator:
     event_time_in_past: не может быть в прошлом
     reminder_time_after_event_time: не может быть после даты события
