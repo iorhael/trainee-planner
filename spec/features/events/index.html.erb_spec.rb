@@ -13,7 +13,6 @@ RSpec.describe 'Events' do
       visit events_path
     end
 
-    it { expect(page).to have_button(I18n.t('events.index.create')) }
     it { expect(page).to have_content(I18n.t('events.index.title')) }
     it { expect(page).to have_content(event.name) }
     it { expect(page).to have_button(I18n.t('events.event.edit')) }

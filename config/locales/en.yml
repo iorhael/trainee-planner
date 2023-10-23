@@ -125,18 +125,18 @@ en:
       edit: Edit
       delete: Delete
       are_you_sure: Are you sure? This will delete all related events.
-    index:
+    table:
+      name: Name
       add: Add category
+    index:
+      title: Categories
   events:
     table:
       name: Name
       category: Category
       event_time: Event time
       reminder_time: Reminder time
-    search:
-      name: Name
-      select_category: Select category
-      search: Search
+      create: Create event
     form_modal:
       create: Create event
       edit: Edit event
@@ -158,6 +158,10 @@ en:
       about_event: About event
       no_description: Place for your description
       back_link: Back to events
+    events_search:
+      name: Name
+      select_category: Select category
+      search: Search
   events_validator:
     event_time_in_past: can't be in the past
     reminder_time_after_event_time: can't be after event time

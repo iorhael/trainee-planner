@@ -4,17 +4,17 @@
   </th>
   <td><%= link_to event.name, event_path(event, locale: I18n.locale) %></td>
   <td><%= event.category.name %></td>
-  <td><%= event.event_time.to_fs(:short) %></td>
-  <td><%= event.reminder_time&.to_fs(:short) %></td>
+  <td><%= l(event.event_time, format: :short) %></td>
+  <td><%= l(event.reminder_time, format: :short) if event.reminder_time.present? %></td>
   <td>
     <%= button_tag t('.edit'),
-                   class: "btn btn-primary",
+                   class: "btn btn-outline-primary",
                    data: { bs_toggle: :modal, bs_target: "##{dom_id(event)}" }%>
   </td>
   <td>
     <%= button_to t('.delete'),
                   event_path(event, locale: I18n.locale),
-                  class: 'btn btn-danger',
+                  class: 'btn btn-outline-danger',
                   data: { confirm: t('.are_you_sure'), turbo_confirm: t('.are_you_sure') },
                   method: :delete %>
   </td>
