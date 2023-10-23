@@ -191,13 +191,17 @@ ru:
   layouts:
     header:
       app_name: Планировщик событий
-      events: События
-      archive: Архив
     locales:
       language: Язык
       en: АНГ
       ru: РУС
-    user_dropdown:
+    not_authorized_nav:
+      sign_in: Войти
+      sign_up: Зарегистрироваться
+    authorized_nav:
+      categories: Категории
+      events: События
+      archive: Архив
       profile_drop:
         edit: Редактировать профиль
         sign_out: Выйти

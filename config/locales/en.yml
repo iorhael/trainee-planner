@@ -186,16 +186,17 @@ en:
   layouts:
     header:
       app_name: Event planner
-      events: Events
-      archive: Archive
     locales:
       language: Language
       en: EN
       ru: RU
-    registration:
+    not_authorized_nav:
       sign_in: Sign in
       sign_up: Sign up
-    user_dropdown:
+    authorized_nav:
+      categories: Categories
+      events: Events
+      archive: Archive
       profile_drop:
         edit: Edit profile
         sign_out: Sign out
