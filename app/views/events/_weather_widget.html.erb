@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="card border border-dark">
+    <div class="card-body p-4">
+
+      <div class="d-flex">
+        <h6 class="flex-grow-1"><%= t('.example_city') %></h6>
+        <h6><%= @event.event_time.to_fs(:time)%></h6>
+      </div>
+
+      <div class="d-flex flex-column text-center mt-5 mb-4">
+        <h6 class="display-4 mb-0 font-weight-bold"><%= t('temperature', temperature: @weather.temperature) %></h6>
+        <span class="small text-secondary"><%= @weather.summary %></span>
+      </div>
+
+      <div class="d-flex align-items-center">
+        <div class="flex-grow-1">
+          <div><i class="bi bi-wind"></i>
+            <span class="ms-1"><%= t('speed', speed: @weather.wind_speed) %></span>
+          </div>
+          <div><i class="bi bi-moisture"></i>
+            <span class="ms-1"><%= t('humidity', humidity: @weather.humidity) %></span>
+          </div>
+          <div><i class="bi bi-chevron-bar-down"></i>
+            <span class="ms-1"><%= t('pressure', pressure: @weather.pressure) %></span>
+          </div>
+        </div>
+        <div><%= image_tag('weather_icon', width: "80px") %></div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -8,8 +8,8 @@ require_relative '../config/environment'
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
-require 'support/database_cleaner'
 require 'vcr'
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |file| require file }
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -81,9 +81,12 @@ Shoulda::Matchers.configure do |config|
     with.library :rails
   end
 end
+
 VCR.configure do |config|
   config.cassette_library_dir = 'spec/vcr_cassettes'
+  config.filter_sensitive_data('<AMBEE_API_KEY>') { ENV.fetch('AMBEE_API_KEY') }
+  config.filter_sensitive_data('<LAT>') { ENV.fetch('LAT') }
+  config.filter_sensitive_data('<LNG>') { ENV.fetch('LNG') }
   config.hook_into :webmock
-  config.configure_rspec_metadata!
   config.allow_http_connections_when_no_cassette = true
 end

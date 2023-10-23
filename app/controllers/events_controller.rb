@@ -9,7 +9,9 @@ class EventsController < ApplicationController
     @events = search(search_params).ordered_by_time.page(params[:page]).per(params[:per_page])
   end
 
-  def show; end
+  def show
+    @weather = Weather::DataHandler.new(event_time: @event.event_time).call
+  end
 
   def create
     unless @category

@@ -1,4 +1,8 @@
 ru:
+  temperature: "%{temperature} °C"
+  humidity: "%{humidity}%"
+  pressure: "%{pressure} Па"
+  speed: "%{speed} м/с"
   activerecord:
     models:
       user:
@@ -36,6 +40,7 @@ ru:
       update: Событие обновлено успешно
       update_with_unaccessible_category: Извините, вы пытаетесь обновить событие, введя недоступную категорию
       destroy: Событие удалено успешно
+  data_unavailable: Данные не доступны
   home:
     authorized:
       hello: Здравствуйте
@@ -123,10 +128,10 @@ ru:
       add: Добавить категорию
   events:
     table:
-      name: Name
-      category: Category
-      event_time: Event time
-      reminder_time: Reminder time
+      name: Название
+      category: Категория
+      event_time: Время события
+      reminder_time: Время напоминания
     search:
       name: Название
       select_category: Выберите категорию
@@ -145,6 +150,13 @@ ru:
     index:
       title: События
       create: Создать событие
+    weather_widget:
+      example_city: Гродно
+  shared:
+    about_event_widget:
+      about_event: О событии
+      no_description: Место для вашего описания
+      back_link: Назад к событиям
   events_validator:
     event_time_in_past: не может быть в прошлом
     reminder_time_after_event_time: не может быть после даты события
