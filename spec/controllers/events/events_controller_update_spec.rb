@@ -5,12 +5,12 @@ require 'rails_helper'
 RSpec.describe EventsController do
   let(:user) { create(:user) }
   let(:category) { create(:category, user:) }
-  let(:event) { create(:event, category:) }
 
   describe 'PATCH /events/:id' do
     subject(:update_event) { patch :update, params: { id: event, event: params } }
 
     context 'when user is not authenticated' do
+      let(:event) { create(:event, category:) }
       let(:params) { event.attributes.merge(name: 'valid name') }
 
       it 'return status 302' do
@@ -24,29 +24,34 @@ RSpec.describe EventsController do
       end
     end
 
-    context 'when category is not belong to current user' do
+    context 'when event does not exist for current user' do
       let(:second_user) { create(:user) }
       let(:second_user_category) { create(:category, user: second_user) }
+      let(:event) { create(:event, category: second_user_category) }
+      let(:params) { event.attributes.merge(name: 'valid name') }
+
+      before { sign_in(user) }
+
+      it 'raise ActiveRecord::RecordNotFound exception' do
+        expect { update_event }.to raise_exception(ActiveRecord::RecordNotFound)
+      end
+    end
+
+    context 'when category does not exist for current user' do
+      let(:second_user) { create(:user) }
+      let(:second_user_category) { create(:category, user: second_user) }
+      let(:event) { create(:event, category:) }
       let(:params) { event.attributes.merge(category_id: second_user_category) }
 
       before { sign_in(user) }
 
-      it 'returns status 422' do
-        update_event
-        expect(response).to have_http_status(:unprocessable_entity)
-      end
-
-      it 'set a flash message' do
-        update_event
-        expect(flash[:error]).to eq('Sorry, you trying to update event with unaccessible category')
-      end
-
-      it 'not update event in the database' do
-        expect { update_event }.not_to(change { event.reload.category })
+      it 'raise ActiveRecord::RecordNotFound exception' do
+        expect { update_event }.to raise_exception(ActiveRecord::RecordNotFound)
       end
     end
 
     context 'when user is authentificated and event params are valid' do
+      let(:event) { create(:event, category:) }
       let(:params) { event.attributes.merge(name: 'valid name') }
 
       before { sign_in(user) }
@@ -67,6 +72,7 @@ RSpec.describe EventsController do
     end
 
     context 'when user is authentificated and event params are not valid' do
+      let(:event) { create(:event, category:) }
       let(:params) { event.attributes.merge(name: '') }
 
       before { sign_in(user) }

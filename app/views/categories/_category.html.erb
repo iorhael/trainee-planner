@@ -1,5 +1,7 @@
 <tr>
-  <th scope="row"><%= index + 1 %></th>
+  <th scope="row">
+    <%= record_index_with_pagination(index: index, relation_class: Category) %>
+  </th>
   <td><%= category.name %>
   <td>
     <%= button_tag t('.edit'),

@@ -1,5 +1,7 @@
 <tr>
-  <th scope="row"><%= index + 1 %></th>
+  <th scope="row">
+    <%= record_index_with_pagination(index: index, relation_class: Event) %>
+  </th>
   <td><%= link_to event.name, event_path(event, locale: I18n.locale) %></td>
   <td><%= event.category.name %></td>
   <td><%= event.event_time.to_fs(:short) %></td>
