@@ -1,0 +1,28 @@
+<div class="container p-4">
+  <h1><p class="text-center"><strong><%= @event.name %></strong></p></h1>
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="widget-col col-4">
+        <div class="text-center py-3">
+          <%= image_tag('archive.png', size: '280x280') %>
+        </div>
+      </div>
+
+      <div class="widget-col col-4 text-center py-5">
+        <div class="card border border-primary">
+          <div class="card-header bg-transparent"><h2><%= t('events.show.about_event') %></h2></div>
+          <ul class="list-group list-group-horizontal">
+            <li class="list-group-item flex-fill"><%= l(@event.event_time, format: :long) %></li>
+            <li class="list-group-item flex-fill"><%= "#{@event.category.name}" %></li>
+          </ul>
+          <div class="card-body p-4">
+            <p class="fs-5 fst-italic">
+              <%= @event.description.present? ? @event.description : t('events.show.no_description') %>
+            </p>
+            <%= link_to t('events.show.back_link'), :back, class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

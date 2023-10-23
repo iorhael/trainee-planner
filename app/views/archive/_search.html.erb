@@ -1,0 +1,18 @@
+<%= form_with url: archive_index_path, method: :get, id: 'archive-search-form' do |f| %>
+  <div class="row justify-content-md-center mb-4">
+    <div class="col col-4">
+      <%= f.text_field :name, class: "form-control", placeholder: t('events.search.name') %>
+    </div>
+    <div class="col col-4">
+      <%= f.collection_select :category_name,
+                              current_user.categories,
+                              :name,
+                              :name,
+                              { prompt: t('events.search.select_category'), selected: '', disabled: '' },
+                              class: "form-control" %>
+    </div>
+      <div class="col col-1">
+        <%= f.submit t('events.search.search'), class: "btn btn-info" %>
+      </div>
+    </div>
+<% end %>

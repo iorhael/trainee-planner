@@ -1,0 +1,25 @@
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col"><%= t('events.table.name') %></th>
+        <th scope="col"><%= t('events.table.category') %></th>
+        <th scope="col"><%= t('events.table.event_time') %></th>
+        <th scope="col"><%= button_to t('.delete_all_btn'),
+                                      destroy_all_archive_index_path(
+                                        name: params[:name],
+                                        category_name: params[:category_name]),
+                                      class: 'btn btn-danger',
+                                      data: { confirm: t('.are_you_sure'), turbo_confirm: t('.are_you_sure') },
+                                      method: :delete %>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @events.each_with_index do |event, index| %>
+        <%= render partial: 'event', locals: { event: event, index: index } %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

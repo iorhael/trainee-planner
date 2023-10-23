@@ -40,7 +40,7 @@ en:
       update: Event updated successfully
       update_in_past: Sorry, but you can not update events in the past
       destroy: Event deleted successfully
-  data_unavailable: Data is not available
+      destroy_all: Events deleted successfully
   home:
     authorized:
       hello: Hello
@@ -150,7 +150,6 @@ en:
       are_you_sure: Are you sure?
     index:
       title: Events
-      create: Create event
     weather_widget:
       example_city: Grodno
   shared:
@@ -162,6 +161,13 @@ en:
       name: Name
       select_category: Select category
       search: Search
+  archive:
+    index:
+      title: Archive
+      back_link: Back
+    table:
+      delete_all_btn: Delete all
+      are_you_sure: Are you sure? This will delete archived events.
   events_validator:
     event_time_in_past: can't be in the past
     reminder_time_after_event_time: can't be after event time
@@ -181,6 +187,7 @@ en:
     header:
       app_name: Event planner
       events: Events
+      archive: Archive
     locales:
       language: Language
       en: EN
