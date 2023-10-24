@@ -46,11 +46,12 @@ en:
       hello: Hello
       events_count: You have %{in_future} events in future (%{today} today)
     not_authorized:
-      app_name: Event planner
+      welcome: Welcome to Event planner
       description:
-        This application will help you efficiently organize your time and will always tell you
-        about a business meeting, going to the dentistor a friend's birthday. You no longer need
+        This application will help you efficiently organize your time. You no longer need
         to keep a lot of events in your head, because this is the work of the "Event planner".
+      next: Where to go next?
+      sign_in: Sign in
       sign_up: Sign up
   users:
     registrations:

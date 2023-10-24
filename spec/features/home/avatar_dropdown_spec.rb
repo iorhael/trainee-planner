@@ -8,7 +8,7 @@ RSpec.describe 'Avatar dropdown actions' do
   before do
     login_as(user)
     visit root_path
-    find('img').click
+    find(:css, "img[src*='human_avatar']").click
   end
 
   describe 'edit profile link' do
