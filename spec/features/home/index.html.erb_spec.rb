@@ -10,7 +10,7 @@ RSpec.describe 'Homes' do
   describe 'app_name link' do
     before { click_link 'Event planner' }
 
-    it { expect(page).to have_current_path('/') }
+    it { expect(page).to have_current_path(root_path) }
   end
 
   describe 'dropdown menu of language button' do

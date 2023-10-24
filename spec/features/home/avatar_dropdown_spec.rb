@@ -14,12 +14,12 @@ RSpec.describe 'Avatar dropdown actions' do
   describe 'edit profile link' do
     before { click_link 'Edit profile' }
 
-    it { expect(page).to have_current_path(edit_user_registration_path(locale: :en)) }
+    it { expect(page).to have_current_path(edit_user_registration_path) }
   end
 
   describe 'sign out button' do
     before { click_button 'Sign out' }
 
-    it { expect(page).to have_current_path(root_path(locale: :en)) }
+    it { expect(page).to have_current_path(root_path) }
   end
 end

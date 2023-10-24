@@ -2,7 +2,7 @@
   <th scope="row">
     <%= record_index_with_pagination(index: index, relation_class: Event) %>
   </th>
-  <td><%= link_to event.name, event_path(event, locale: I18n.locale) %></td>
+  <td><%= link_to event.name, event_path(event) %></td>
   <td><%= event.category.name %></td>
   <td><%= l(event.event_time, format: :short) %></td>
   <td><%= l(event.reminder_time, format: :short) if event.reminder_time.present? %></td>
@@ -13,7 +13,7 @@
   </td>
   <td>
     <%= button_to t('.delete'),
-                  event_path(event, locale: I18n.locale),
+                  event_path(event),
                   class: 'btn btn-outline-danger',
                   data: { confirm: t('.are_you_sure'), turbo_confirm: t('.are_you_sure') },
                   method: :delete %>

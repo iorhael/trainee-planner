@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  scope '(:locale)', locale: /#{I18n.available_locales.join('|')}/, defaults: { locale: I18n.default_locale } do
+
+  scope '(:locale)', locale: /#{I18n.available_locales.join('|')}/ do
     root to: 'home#index'
     devise_for :users, path: '', controllers: { registrations: 'users/registrations' }
     resources :categories, only: %i[index create update destroy]

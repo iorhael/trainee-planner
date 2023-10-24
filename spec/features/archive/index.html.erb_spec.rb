@@ -55,7 +55,7 @@ RSpec.describe 'Archive' do
       click_link event.name
     end
 
-    it { expect(page).to have_current_path(archive_path(event)) }
+    it { expect(page).to have_current_path(archive_path(id: event)) }
   end
 
   describe 'when user is not authenticated' do
