@@ -86,12 +86,46 @@ RSpec.describe Event do
 
   describe 'scopes' do
     describe '.ordered_by_time' do
-      subject(:ordered_scope) { described_class.ordered_by_time }
+      subject(:ordered_scope) { described_class.ordered_by_time(order) }
 
       let!(:late_event) { create(:event, event_time: DateTime.now + 2) }
       let!(:early_event) { create(:event, event_time: DateTime.now + 1) }
 
-      it { expect(ordered_scope).to eq([early_event, late_event]) }
+      context 'with :asc value' do
+        let(:order) { :asc }
+
+        it { expect(ordered_scope).to eq([early_event, late_event]) }
+      end
+
+      context 'with :desc value' do
+        let(:order) { :desc }
+
+        it { expect(ordered_scope).to eq([late_event, early_event]) }
+      end
+    end
+
+    describe '.in_future' do
+      subject(:in_future_scope) { described_class.in_future }
+
+      let!(:past_event) { build(:event, event_time: DateTime.now - 2.hours) }
+      let!(:future_event) { create(:event, event_time: DateTime.now + 1) }
+
+      before { past_event.save(validate: false) }
+
+      it { expect(in_future_scope).to include(future_event) }
+      it { expect(in_future_scope).not_to include(past_event) }
+    end
+
+    describe '.in_past' do
+      subject(:in_past_scope) { described_class.in_past }
+
+      let!(:past_event) { build(:event, event_time: DateTime.now - 2.hours) }
+      let!(:future_event) { create(:event, event_time: DateTime.now + 1) }
+
+      before { past_event.save(validate: false) }
+
+      it { expect(in_past_scope).to include(past_event) }
+      it { expect(in_past_scope).not_to include(future_event) }
     end
   end
 end

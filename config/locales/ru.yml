@@ -35,12 +35,12 @@ ru:
       update: Категория обновлена успешно
       destroy: Категория удалена успешно
     event:
+      moved: Это событие перемещено в архив
       create: Событие создано успешно
-      create_with_unaccessible_category: Извините, вы пытаетесь создать событие, введя недоступную категорию
       update: Событие обновлено успешно
-      update_with_unaccessible_category: Извините, вы пытаетесь обновить событие, введя недоступную категорию
+      update_in_past: Извините, но вы не можете обновлять события в прошлом
       destroy: Событие удалено успешно
-  data_unavailable: Данные не доступны
+      destroy_all: События удалены успешно
   home:
     authorized:
       hello: Здравствуйте
@@ -135,6 +135,7 @@ ru:
       category: Категория
       event_time: Время события
       reminder_time: Время напоминания
+      create: Создать событие
     search:
       name: Название
       category: Категория
@@ -154,7 +155,6 @@ ru:
       are_you_sure: Вы уверены?
     index:
       title: События
-      create: Создать событие
     weather_widget:
       example_city: Гродно
   shared:
@@ -166,6 +166,13 @@ ru:
       name: Название
       select_category: Выберите категорию
       search: Поиск
+  archive:
+    index:
+      title: Архив
+      back_link: Назад
+    table:
+      delete_all_btn: Удалить всё
+      are_you_sure: Вы уверены? Архивные события будут удалены.
   events_validator:
     event_time_in_past: не может быть в прошлом
     reminder_time_after_event_time: не может быть после даты события
@@ -185,6 +192,7 @@ ru:
     header:
       app_name: Планировщик событий
       events: События
+      archive: Архив
     locales:
       language: Язык
       en: АНГ

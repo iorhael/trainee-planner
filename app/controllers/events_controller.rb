@@ -10,6 +10,8 @@ class EventsController < ApplicationController
   end
 
   def show
+    redirect_to archive_path(@event), info: t('flash.event.moved') if @event.event_time.past?
+
     @weather = Weather::DataHandler.new(event_time: @event.event_time).call
   end
 
@@ -23,6 +25,8 @@ class EventsController < ApplicationController
   end
 
   def update
+    return redirect_to events_path, error: t('flash.event.update_in_past') if @event.event_time.past?
+
     if @event.update(event_params)
       redirect_to events_path, success: t('flash.event.update')
     else
@@ -41,7 +45,7 @@ class EventsController < ApplicationController
   private
 
   def search(search_params)
-    SearchService.new(search_params:, default_relation: current_user.events).call
+    SearchService.new(search_params:, default_relation: current_user.events.in_future).call
   end
 
   def search_params

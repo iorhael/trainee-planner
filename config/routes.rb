@@ -10,5 +10,10 @@ Rails.application.routes.draw do
     devise_for :users, path: '', controllers: { registrations: 'users/registrations' }
     resources :categories, only: %i[index create update destroy]
     resources :events, only: %i[index show create update destroy]
+    resources :archive, only: %i[index show destroy] do
+      collection do
+        delete 'destroy_all'
+      end
+    end
   end
 end
