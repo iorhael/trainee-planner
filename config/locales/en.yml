@@ -38,7 +38,7 @@ en:
       moved: This event moved to archive
       create: Event created successfully
       update: Event updated successfully
-      update_in_past: Sorry, but you can update events in the past
+      update_in_past: Sorry, but you can not update events in the past
       destroy: Event deleted successfully
   data_unavailable: Data is not available
   home:

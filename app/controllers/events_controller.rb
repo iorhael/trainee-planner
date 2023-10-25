@@ -25,7 +25,7 @@ class EventsController < ApplicationController
   end
 
   def update
-    redirect_to events_path, error: t('flash.event.update_in_past') and return if @event.event_time.past?
+    return redirect_to events_path, error: t('flash.event.update_in_past') if @event.event_time.past?
 
     if @event.update(event_params)
       redirect_to events_path, success: t('flash.event.update')
