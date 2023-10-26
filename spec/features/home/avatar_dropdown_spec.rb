@@ -8,18 +8,18 @@ RSpec.describe 'Avatar dropdown actions' do
   before do
     login_as(user)
     visit root_path
-    find('img').click
+    find(:css, "img[src*='human_avatar']").click
   end
 
   describe 'edit profile link' do
     before { click_link 'Edit profile' }
 
-    it { expect(page).to have_current_path(edit_user_registration_path(locale: :en)) }
+    it { expect(page).to have_current_path(edit_user_registration_path) }
   end
 
   describe 'sign out button' do
     before { click_button 'Sign out' }
 
-    it { expect(page).to have_current_path(root_path(locale: :en)) }
+    it { expect(page).to have_current_path(root_path) }
   end
 end

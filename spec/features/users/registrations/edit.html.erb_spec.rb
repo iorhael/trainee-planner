@@ -63,6 +63,6 @@ RSpec.describe 'User edit profile process' do
       click_button 'Cancel my account'
     end
 
-    it { expect(page).to have_current_path(root_path(locale: :en)) }
+    it { expect(page).to have_current_path(root_path) }
   end
 end

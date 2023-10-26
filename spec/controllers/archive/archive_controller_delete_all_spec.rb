@@ -25,7 +25,7 @@ RSpec.describe ArchiveController do
 
       it 'redirect to sign in page' do
         delete_all_events
-        expect(response).to redirect_to(new_user_session_path)
+        expect(response).to redirect_to(new_user_session_path(locale: I18n.default_locale))
       end
 
       it 'does not delete event record' do

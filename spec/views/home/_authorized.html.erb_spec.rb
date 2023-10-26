@@ -17,4 +17,5 @@ RSpec.describe 'home/index.html.erb' do
 
   it { expect(rendered).to have_content("Hello, #{user.first_name}") }
   it { expect(rendered).to have_content('You have 2 events in future (1 today)') }
+  it { expect(rendered).to have_css("img[src*='welcome_back']") }
 end

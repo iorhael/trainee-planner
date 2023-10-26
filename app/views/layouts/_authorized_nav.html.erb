@@ -1,3 +1,14 @@
+<ul class="navbar-nav me-auto">
+  <li class="nav-item">
+    <%= link_to t('.categories'), categories_path, class: 'nav-link' %>
+  </li>
+  <li class="nav-item">
+    <%= link_to t('.events'), events_path, class: 'nav-link' %>
+  </li>
+  <li class="nav-item">
+    <%= link_to t('.archive'), archive_index_path, class: 'nav-link' %>
+  </li>
+</ul>
 <div class="dropdown">
   <a class="nav-link dropdown-toggle text-muted" href="#" data-bs-toggle="dropdown">
     <%= image_tag("human_avatar.svg", size: '40x40') %>

@@ -1,11 +1,19 @@
-<body class="text-center">
-  <div class="cover-container d-flex p-3 justify-content-center">
-    <main role="main" class="inner cover">
-      <h1 class="cover-heading"><%= t('.app_name') %></h1>
-      <p class="lead"><%= t('.description') %></p>
-      <p class="lead">
-        <%= link_to t(".sign_up"), new_user_registration_path, class: "btn btn-outline-info btn-lg" %>
-      </p>
-    </main>
+<div class="container p-4 ">
+  <div class="row text-center">
+    <div class="col-md-6">
+      <div class="jumbotron">
+        <h1 class="display-5 fst-italic"><%= t('.welcome') %></h1>
+        <p class="lead fst-italic"><%= t('.description') %></p>
+        <hr class="my-4">
+        <p class="fs-4 fst-italic"><%= t('.next') %></p>
+        <p class="lead">
+          <%= link_to t('.sign_in'), new_user_session_path, class: "btn btn-lg btn-info mb-2" %>
+          <%= link_to t('.sign_up'), new_user_registration_path, class: "btn btn-lg btn-secondary mx-2 mb-2" %>
+        </p>
+      </div>
+    </div>
+    <div class="col-md-6 align-items-center ">
+      <%= image_tag('landscapes/hello', class: 'rounded-circle', width: '100%') %>
+    </div>
   </div>
-</body>
+</div>
