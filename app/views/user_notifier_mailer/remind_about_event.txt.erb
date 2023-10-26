@@ -1,0 +1,13 @@
+<%= t('user_notifier_mailer.remind_about_event.title') %>
+<%= t('user_notifier_mailer.remind_about_event.greeting', name: @user.first_name) %>
+<%= t('user_notifier_mailer.remind_about_event.event_is_coming') %>
+===============================================
+
+<%= t('user_notifier_mailer.remind_about_event.event_details') %>
+<%= t('user_notifier_mailer.remind_about_event.event_name') %><%= @event.name %>
+<%= t('user_notifier_mailer.remind_about_event.date') %><%= l(@event.event_time, format: :short) %>
+<%= t('user_notifier_mailer.remind_about_event.description') %><%= @event.description %>
+
+===============================================
+<%= t('user_notifier_mailer.remind_about_event.best_regars') %>
+<%= t('user_notifier_mailer.remind_about_event.company_sender') %>

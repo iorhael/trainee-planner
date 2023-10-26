@@ -193,13 +193,13 @@ ru:
     gap:
       truncate: '...'
   user_notifier_mailer:
-    notify_about_event:
+    remind_about_event:
       title: Уведомление о предстоящем событии
       greeting: "Дорогой %{name},"
       event_is_coming: Ваше мероприятие уже не за горами, и мы хотим быть уверены, что у вас есть все необходимые детали.
-      event_details: 'Детали события:'
-      event_name: Название события
-      date: 'Время:'
+      event_details: 'Детали события: '
+      event_name: 'Название события: '
+      date: 'Время: '
       description: 'Описание:'
       best_regards: С наилучшими пожеланиями,
       company_sender: Планировщик событий

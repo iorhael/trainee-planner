@@ -58,7 +58,7 @@ class EventsController < ApplicationController
   end
 
   def handle_notification
-    @event.update(is_notificated: false) if event_params[:reminder_time].present?
+    @event.update(is_notificated: false) if @event.reminder_time_previously_changed?
   end
 
   def set_category

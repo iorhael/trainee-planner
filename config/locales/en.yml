@@ -188,13 +188,13 @@ en:
     gap:
       truncate: '...'
   user_notifier_mailer:
-    notify_about_event:
+    remind_about_event:
       title: Upcoming Event Notification
       greeting: "Dear %{name},"
       event_is_coming: Your event is just around the corner, and we want to make sure you have all the details you need.
-      event_details: 'Event Details:'
-      event_name: Event name
-      date: 'Date:'
+      event_details: 'Event Details: '
+      event_name: 'Event name: '
+      date: 'Date: '
       description: 'Description:'
       best_regards: Best regards,
       company_sender: Event Manager

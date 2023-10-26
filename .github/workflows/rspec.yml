@@ -9,6 +9,10 @@ env:
   POSTGRES_HOST: localhost
   POSTGRES_USER: postgres
   POSTGRES_PASSWORD: password
+  MAIL_ADDRESS: smtp.example.com
+  MAIL_PORT: port
+  MAIL_USER: mail_user
+  MAIL_PASSWORD: mail_password
 
 jobs:
   rspec:
