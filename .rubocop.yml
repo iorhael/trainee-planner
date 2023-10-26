@@ -13,6 +13,10 @@ Metrics/MethodLength:
   Exclude:
     - db/migrate/**/*
 
+Metrics/BlockLength:
+  Exclude:
+    - config/environments/**/*
+
 Rails/LexicallyScopedActionFilter:
   Exclude:
     - app/controllers/**/*
