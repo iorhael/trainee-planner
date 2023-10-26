@@ -1,0 +1,16 @@
+<div class="container">
+  <h2><%= t('.title') %></h2>
+  <p><%= t('.greeting', name: @user.first_name) %></p>
+  <p><%= t('.event_is_coming') %></p>
+
+  <div class="event-details">
+    <h3 style="text-align: center;"><%= t('.event_details') %></h3>
+    <p><strong><%= t('.event_name') %></strong><%= @event.name %></p>
+    <p><strong><%= t('.date') %></strong><%= l(@event.event_time, format: :short) %></p>
+    <p><strong><%= t('.description') %></strong></p>
+    <p><%= @event.description %></p>
+  </div>
+
+  <p><%= t('.best_regars') %></p>
+  <p style="color: #333; font-weight: bold;"><%= t('.company_sender') %></p>
+</div>
