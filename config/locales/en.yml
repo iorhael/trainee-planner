@@ -41,6 +41,9 @@ en:
       update_in_past: Sorry, but you can not update events in the past
       destroy: Event deleted successfully
       destroy_all: Events deleted successfully
+  mail:
+    subject:
+      upcoming_event: Notification about upcoming event
   home:
     authorized:
       hello: Hello
@@ -184,6 +187,17 @@ en:
       previous: Previous
     gap:
       truncate: '...'
+  user_notifier_mailer:
+    remind_about_event:
+      title: Upcoming Event Notification
+      greeting: "Dear %{name},"
+      event_is_coming: Your event is just around the corner, and we want to make sure you have all the details you need.
+      event_details: 'Event Details: '
+      event_name: 'Event name: '
+      date: 'Date: '
+      description: 'Description:'
+      best_regards: Best regards,
+      company_sender: Event Manager
   layouts:
     header:
       app_name: Event planner

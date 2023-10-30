@@ -41,6 +41,9 @@ ru:
       update_in_past: Извините, но вы не можете обновлять события в прошлом
       destroy: Событие удалено успешно
       destroy_all: События удалены успешно
+  mail:
+    subject:
+      upcoming_event: Уведомление о предстоящем событии
   home:
     authorized:
       hello: Здравствуйте
@@ -189,6 +192,17 @@ ru:
       previous: Пред
     gap:
       truncate: '...'
+  user_notifier_mailer:
+    remind_about_event:
+      title: Уведомление о предстоящем событии
+      greeting: "Дорогой %{name},"
+      event_is_coming: Ваше мероприятие уже не за горами, и мы хотим быть уверены, что у вас есть все необходимые детали.
+      event_details: 'Детали события: '
+      event_name: 'Название события: '
+      date: 'Время: '
+      description: 'Описание:'
+      best_regards: С наилучшими пожеланиями,
+      company_sender: Планировщик событий
   layouts:
     header:
       app_name: Планировщик событий

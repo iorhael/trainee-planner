@@ -28,6 +28,7 @@ class EventsController < ApplicationController
     return redirect_to events_path, error: t('flash.event.update_in_past') if @event.event_time.past?
 
     if @event.update(event_params)
+      handle_notification
       redirect_to events_path, success: t('flash.event.update')
     else
       redirect_to events_path, error: @event.errors.full_messages.to_sentence
@@ -54,6 +55,10 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:name, :event_time, :description, :reminder_time, :category_id)
+  end
+
+  def handle_notification
+    @event.update(is_notificated: false) if @event.reminder_time_previously_changed?
   end
 
   def set_category
