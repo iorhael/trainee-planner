@@ -77,6 +77,9 @@ gem 'whenever', require: false
 # Simple, efficient background processing for Ruby [https://github.com/sidekiq/sidekiq]
 gem 'sidekiq'
 
+# Lightweight job scheduler extension for Sidekiq [https://github.com/sidekiq-scheduler/sidekiq-scheduler]
+gem 'sidekiq-scheduler'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
