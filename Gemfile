@@ -74,6 +74,9 @@ gem 'time_difference'
 # Cron jobs in Ruby [https://github.com/javan/whenever]
 gem 'whenever', require: false
 
+# Simple, efficient background processing for Ruby [https://github.com/sidekiq/sidekiq]
+gem 'sidekiq'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
