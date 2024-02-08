@@ -71,9 +71,6 @@ gem 'httparty'
 # Ruby method to print out time difference (duration) [https://github.com/tmlee/time_difference]
 gem 'time_difference'
 
-# Cron jobs in Ruby [https://github.com/javan/whenever]
-gem 'whenever', require: false
-
 # Simple, efficient background processing for Ruby [https://github.com/sidekiq/sidekiq]
 gem 'sidekiq'
 

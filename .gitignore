@@ -47,3 +47,6 @@
 
 # Ignore tool-versions file
 /.tool-versions
+
+# Ignore redis dump
+/dump.rdb
