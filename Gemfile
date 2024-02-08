@@ -71,8 +71,11 @@ gem 'httparty'
 # Ruby method to print out time difference (duration) [https://github.com/tmlee/time_difference]
 gem 'time_difference'
 
-# Cron jobs in Ruby [https://github.com/javan/whenever]
-gem 'whenever', require: false
+# Simple, efficient background processing for Ruby [https://github.com/sidekiq/sidekiq]
+gem 'sidekiq'
+
+# Lightweight job scheduler extension for Sidekiq [https://github.com/sidekiq-scheduler/sidekiq-scheduler]
+gem 'sidekiq-scheduler'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

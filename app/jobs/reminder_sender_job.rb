@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-class NotificationsSenderJob < ApplicationJob
-  queue_as :default
+class ReminderSenderJob
+  include Sidekiq::Job
 
   def perform
     Event.for_notification.find_each do |event|
