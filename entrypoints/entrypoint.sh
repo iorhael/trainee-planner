@@ -7,8 +7,6 @@ done
 
 echo "Wrapper: Waiting for another 5 seconds..."; sleep 5
 
-rake db:create
-rake db:migrate
-rake db:seed
+rake db:prepare
 
 exec rails server -b 0.0.0.0
