@@ -1,0 +1,224 @@
+ru:
+  temperature: "%{temperature} °C"
+  humidity: "%{humidity}%"
+  pressure: "%{pressure} Па"
+  speed: "%{speed} м/с"
+  activerecord:
+    models:
+      user:
+      category:
+        one: Категория
+        other: Категории
+      event:
+        one: Событие
+        other: События
+    attributes:
+      user:
+        first_name: Имя
+        last_name: Фамилия
+        email: Электронная почта
+        password: Пароль
+        new_password: Новый пароль
+        password_confirmation: Подтверждение пароля
+        current_password: Текущий пароль
+      category:
+        name: Название
+      event:
+        name: Название
+        event_time: Дата события
+        description: Описание
+        reminder_time: Время напоминания
+        category: Категория
+  flash:
+    category:
+      create: Категория создана успешно
+      update: Категория обновлена успешно
+      destroy: Категория удалена успешно
+    event:
+      moved: Это событие перемещено в архив
+      create: Событие создано успешно
+      update: Событие обновлено успешно
+      update_in_past: Извините, но вы не можете обновлять события в прошлом
+      destroy: Событие удалено успешно
+      destroy_all: События удалены успешно
+  mail:
+    subject:
+      upcoming_event: Уведомление о предстоящем событии
+  home:
+    authorized:
+      hello: Здравствуйте
+      events_count: У вас %{in_future} предстоящих событий (%{today} сегодня)
+    not_authorized:
+      welcome: Приветствуем в Планировщике событий
+      description:
+        Это приложение поможет вам эффективно организовать свое время. Вам больше не
+        нужно держать в голове множество событий, ведь это работа "Планировщика событий".
+      next: Куда дальше?
+      sign_in: Войти
+      sign_up: Зарегистрироваться
+  users:
+    registrations:
+      new:
+        sign_up_title: Регистрация
+        password_confirmation: Подтверждение пароля
+        sign_up_button: Зарегистрироваться
+      edit:
+        title: Изменить пользователя
+        update: Обновить
+        cancel_account: Удалить мой аккаунт
+        confirm: Вы уверены?
+        back: Назад
+    sessions:
+      new:
+        sign_in_title: Вход
+        remember_me: Запомнить меня
+        sign_in_button: Войти
+    shared:
+      links:
+        log_in: Войти
+        sign_up: Зарегистрироваться
+        forgot_password: Забыли пароль?
+        receive_confirmation_instructions: Не получили инструкций подтверждения?
+        receive_unlock_instructions: Не получили инструкций разблокировки?
+        sign_in_with: Войти с
+    unlocks:
+      new:
+        title: Повторно отправить инструкции по разблокировке
+        resend_instructions: Повторно отправить инструкции по разблокировке
+    confirmations:
+      new:
+        resend_instructions: Послать инструкции подтверждения повторно
+    mailer:
+      confirmation_instructions:
+        welcome: Добро пожаловать
+        confirm_account_email: 'Вы можете подтвердить вашу электронную почту по ссылке ниже:'
+      email_chaged:
+        welcome: Здравствуйте
+        contacting_to_notify: Мы извещаем вас о том, что ваша почта была изменена на
+      password_change:
+        welcome: Здравствуйте
+        contacting_to_notify: Мы извещаем вас о том, что ваш пароль был изменён.
+      reset_password_instructions:
+        welcome: Здравствуйте
+        someone_requested: Кто-то запрашивал ссылку на изменение пароля. Вы можете сделать это по ссылке ниже.
+        change_password: Изменить пароль
+        didnt_request: Если вы не запрашивали это, пожалуйста, проигнорируйте это сообщение.
+        access_link_to_change: Ваш пароль не изменится, пока вы не перейдете по ссылке выше и не создадите новый.
+      unlock_instructions:
+        welcome: Здравствуйте
+        account_locked: Ваша учетная запись заблокирована из-за слишком большого количества неудачных попыток входа.
+        click_to_unlock: 'Нажмите на ссылку ниже, чтобы разблокировать свою учетную запись:'
+        unlock_account: Разблокировать мою учетную запись
+    passwords:
+      edit:
+        title: Изменение пароля
+        change_password: Изменить мой пароль
+      new:
+        title: Забыли пароль?
+        send_instructions: Отправьте мне инструкции по сбросу пароля
+  categories:
+    form_modal:
+      create: Создать категорию
+      edit: Редактировать категорию
+      close_btn: Закрыть
+    no_categories:
+      empty: Похоже, что у вас нет категорий
+      add: Добавить первую категорию
+    category:
+      edit: Редактировать
+      delete: Удалить
+      are_you_sure: Вы уверены? Все связанные события будут удалены.
+    table:
+      name: Название
+      add: Добавить категорию
+    index:
+      title: Категории
+  events:
+    table:
+      name: Название
+      category: Категория
+      event_time: Время события
+      reminder_time: Время напоминания
+      create: Создать событие
+    search:
+      name: Название
+      category: Категория
+      event_time: Время события
+      reminder_time: Время напоминания
+      create: Создать событие
+    form_modal:
+      create: Создать событие
+      edit: Редактировать событие
+      close_btn: Закрыть
+    no_events:
+      empty: Здесь нет событий
+      add: Добавить событие
+    event:
+      edit: Редактировать
+      delete: Удалить
+      are_you_sure: Вы уверены?
+    index:
+      title: События
+    weather_widget:
+      example_city: Гродно
+  shared:
+    about_event_widget:
+      about_event: О событии
+      no_description: Место для вашего описания
+      back_link: Назад к событиям
+    events_search:
+      name: Название
+      select_category: Выберите категорию
+      search: Поиск
+  archive:
+    index:
+      title: Архив
+      back_link: Назад
+    table:
+      delete_all_btn: Удалить всё
+      are_you_sure: Вы уверены? Архивные события будут удалены.
+  events_validator:
+    event_time_in_past: не может быть в прошлом
+    reminder_time_after_event_time: не может быть после даты события
+    reminder_time_in_past: не может быть в прошлом
+  kaminari:
+    first_page:
+      first: Первая
+    last_page:
+      last: Последняя
+    next_page:
+      next: След
+    prev_page:
+      previous: Пред
+    gap:
+      truncate: '...'
+  user_notifier_mailer:
+    remind_about_event:
+      title: Уведомление о предстоящем событии
+      greeting: "Дорогой %{name},"
+      event_is_coming: Ваше мероприятие уже не за горами, и мы хотим быть уверены, что у вас есть все необходимые детали.
+      event_details: 'Детали события: '
+      event_name: 'Название события: '
+      date: 'Время: '
+      description: 'Описание:'
+      best_regards: С наилучшими пожеланиями,
+      company_sender: Планировщик событий
+  layouts:
+    header:
+      app_name: Планировщик событий
+    locales:
+      language: Язык
+      en: АНГ
+      ru: РУС
+    not_authorized_nav:
+      sign_in: Войти
+      sign_up: Зарегистрироваться
+    authorized_nav:
+      categories: Категории
+      events: События
+      archive: Архив
+      profile_drop:
+        edit: Редактировать профиль
+        sign_out: Выйти
+    footer:
+      see_other: 'Посмотрите другие проекты:'

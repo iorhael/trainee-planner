@@ -1,0 +1,16 @@
+<% if @events.empty? %>
+  <%= render partial: 'no_events' %>
+<% else %>
+  <div class="container p-2 text-center">
+    <p class="fs-1"><%= t('.title') %></p>
+    <%= render partial: 'form_modal',
+                        locals: { target_id: 'new-event-modal', modal_type: 'create', event: Event.new } %>
+
+    <%= form_with url: events_path, method: :get, id: 'events-search-form' do |form| %>
+      <%= render partial: 'shared/events_search', locals: { f: form } %>
+    <% end %>
+
+    <%= render partial: 'table' %>
+    <%= paginate @events %>
+  </div>
+<% end %>

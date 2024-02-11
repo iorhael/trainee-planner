@@ -1,0 +1,11 @@
+<% if @categories.empty? %>
+  <%= render partial: 'no_categories' %>
+<% else %>
+  <div class="container p-2 text-center">
+    <p class="fs-1"><%= t('.title') %></p>
+    <%= render partial: 'form_modal',
+                        locals: { target_id: 'new-category-modal', modal_type: 'create', category: Category.new } %>
+    <%= render partial: 'table' %>
+    <%= paginate @categories %>
+  </div>
+<% end %>

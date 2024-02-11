@@ -1,0 +1,50 @@
+<%= render "users/shared/error_messages", resource: resource %>
+<main class="w-20 m-auto">
+  <div class="row justify-content-center align-items-center">
+    <div class="border container p-4">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <div align="center"><h1><%= t('.title') %></h1></div>
+
+        <div class="field">
+          <%= f.text_field :first_name, class: "form-control",
+          placeholder: User.human_attribute_name(:first_name), autofocus: true %>
+        </div>
+
+        <div class="field">
+          <%= f.text_field :last_name, class: "form-control",
+          placeholder: User.human_attribute_name(:last_name) %>
+        </div>
+
+        <div class="field">
+          <%= f.email_field :email, class: "form-control",
+          placeholder: User.human_attribute_name(:email) %>
+        </div>
+
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div><%= t('.waiting_confirmation') %> <%= resource.unconfirmed_email %></div>
+        <% end %>
+
+        <div class="field">
+          <%= f.password_field :password, class:"form-control",
+          placeholder: User.human_attribute_name(:new_password) %>
+        </div>
+
+        <div class="field">
+          <%= f.password_field :password_confirmation, class:"form-control",
+          placeholder: User.human_attribute_name(:password_confirmation) %>
+        </div>
+
+        <div class="field">
+          <%= f.password_field :current_password, class:"form-control",
+          placeholder: User.human_attribute_name(:current_password) %>
+        </div>
+
+        <%= f.submit t('.update'), class: 'btn btn-form btn-primary w-100 py-2' %>
+      <% end %>
+      <%= button_to t('.cancel_account'), registration_path(resource_name),
+      data: { confirm: t('.confirm'), turbo_confirm: t('.confirm') },
+      method: :delete, class: 'btn btn-form btn-danger w-100' %>
+      <div align="center"><%= link_to t('.back'), :back %></div>
+    </div>
+  </div>
+</main>

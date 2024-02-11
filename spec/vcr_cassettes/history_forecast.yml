@@ -1,0 +1,75 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.ambeedata.com/weather/history/by-lat-lng?from=2023-10-13%2009:00:00&lat=<LAT>&lng=<LNG>&to=2023-10-13%2009:00:00&units=si
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Api-Key:
+      - "<AMBEE_API_KEY>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '482'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Content-Security-Policy:
+      - 'default-src ''self'';base-uri ''self'';block-all-mixed-content;font-src ''self''
+        https: data:;frame-ancestors ''self'';img-src ''self'' data:;object-src ''none'';script-src
+        ''self'';script-src-attr ''none'';style-src ''self'' https: ''unsafe-inline'';upgrade-insecure-requests'
+      X-Dns-Prefetch-Control:
+      - 'off'
+      Expect-Ct:
+      - max-age=0
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      X-Download-Options:
+      - noopen
+      X-Content-Type-Options:
+      - nosniff
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - no-referrer
+      X-Xss-Protection:
+      - '0'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept
+      Content-Language:
+      - en
+      Etag:
+      - W/"1e2-u2g5JNI/Df6eqq7SFLT+i7mU6pQ"
+      Date:
+      - Fri, 13 Oct 2023 11:40:25 GMT
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 8df14479d114ba491250765ab0716880.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - WAW51-P1
+      X-Amz-Cf-Id:
+      - RhK5yVWtXp_6p0iYamr5BAhdoF-GBsawv6HpXEVXztAwFSxPLxOhDA==
+    body:
+      encoding: UTF-8
+      string: '{"message":"success","data":{"lat":<LAT>,"lng":<LNG>,"history":[{"timezone":"Europe/Minsk","country_code":"BY","time":1697187600,"apparentTemperature":12,"cloudCover":0.3,"dewPoint":6.94,"humidity":76,"pressure":1017,"precipIntensity":0,"temperature":10,"visibility":10000,"windGust":6.38,"ozone":265.71,"uvIndex":1.95,"windSpeed":2.48,"windBearing":229,"icon":"clear","summary":"Clear
+        skies. A mild day ahead. Higher humidity levels. Expect a gentle breeze. Low
+        UV levels."}]}}'
+  recorded_at: Fri, 13 Oct 2023 11:40:25 GMT
+recorded_with: VCR 6.2.0

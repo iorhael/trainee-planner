@@ -1,0 +1,15 @@
+<div class="container p-3">
+  <div class="row">
+    <div class="col-sm-6 mx-auto">
+      <h2><p class="text-center fst-italic"><strong><%= t('.hello') %>, <%= current_user.first_name %></strong></p></h2>
+      <h5>
+        <p class="text-center fst-italic">
+          <%= t('.events_count', in_future: @events_counter.in_future, today: @events_counter.today ) %>
+        </p>
+        <div class="py-4">
+          <%= image_tag('landscapes/welcome_back', class: 'rounded-circle', width: '100%') %>
+        </div>
+      </h5>
+    </div>
+  </div>
+</div>

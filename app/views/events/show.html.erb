@@ -1,0 +1,20 @@
+<div class="container p-4">
+  <h1><p class="text-center"><strong><%= @event.name %></strong></p></h1>
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="widget-col col-4">
+        <% if @weather %>
+          <%= render partial: 'weather_widget' %>
+        <% else %>
+          <div class="py-4">
+            <%= image_tag(part_of_day_image_path, class: 'rounded-circle', width: '100%') %>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="widget-col col-4 text-center py-5">
+        <%= render partial: 'shared/about_event_widget' %>
+      </div>
+    </div>
+  </div>
+</div>

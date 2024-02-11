@@ -1,0 +1,15 @@
+<tr>
+  <th scope="row">
+    <%= record_index_with_pagination(index: index, relation_class: Event) %>
+  </th>
+  <td><%= link_to event.name, archive_path(event) %></td>
+  <td><%= event.category.name %></td>
+  <td><%= l(event.event_time, format: :short) %></td>
+  <td>
+    <%= button_to t('events.event.delete'),
+                  archive_path(event),
+                  class: 'btn btn-outline-danger',
+                  data: { confirm: t('events.event.are_you_sure'), turbo_confirm: t('events.event.are_you_sure') },
+                  method: :delete %>
+  </td>
+</tr>

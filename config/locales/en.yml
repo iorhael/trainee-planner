@@ -1,33 +1,219 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   "true": "foo"
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  temperature: "%{temperature} °C"
+  humidity: "%{humidity}%"
+  pressure: "%{pressure} Pa"
+  speed: "%{speed} m/s"
+  activerecord:
+    models:
+      user:
+      category:
+        one: Category
+        other: Categories
+      event:
+        one: Event
+        other: Events
+    attributes:
+      user:
+        first_name: First name
+        last_name: Last name
+        email: Email
+        password: Password
+        new_password: New password
+        password_confirmation: Password confirmation
+        current_password: Current password
+      category:
+        name: Name
+      event:
+        name: Name
+        event_time: Event time
+        description: Description
+        reminder_time: Reminder time
+        category: Category
+  flash:
+    category:
+      create: Category created successfully
+      update: Category updated successfully
+      destroy: Category deleted successfully
+    event:
+      moved: This event moved to archive
+      create: Event created successfully
+      update: Event updated successfully
+      update_in_past: Sorry, but you can not update events in the past
+      destroy: Event deleted successfully
+      destroy_all: Events deleted successfully
+  mail:
+    subject:
+      upcoming_event: Notification about upcoming event
+  home:
+    authorized:
+      hello: Hello
+      events_count: You have %{in_future} events in future (%{today} today)
+    not_authorized:
+      welcome: Welcome to Event planner
+      description:
+        This application will help you efficiently organize your time. You no longer need
+        to keep a lot of events in your head, because this is the work of the "Event planner".
+      next: Where to go next?
+      sign_in: Sign in
+      sign_up: Sign up
+  users:
+    registrations:
+      new:
+        sign_up_title: Sign up
+        password_confirmation: Password confiramtion
+        sign_up_button: Sign up
+      edit:
+        title: Edit User
+        waiting_confirmation: 'Currently waiting confirmation for:'
+        update: Update
+        cancel_account: Cancel my account
+        confirm: Are you sure?
+        back: Back
+    sessions:
+      new:
+        sign_in_title: Sign in
+        remember_me: Remember me
+        sign_in_button: Sign in
+    shared:
+      links:
+        log_in: Log in
+        sign_up: Sign up
+        forgot_password: Forgot your password?
+        receive_confirmation_instructions: Didn't receive confiramtion instructions?
+        receive_unlock_instructions: Didn't receive unlock instructions?
+        sign_in_with: Sign in with
+    unlocks:
+      new:
+        title: Resend unlock instructions
+        resend_instructions: Resend unlock instructions
+    confirmations:
+      new:
+        resend_instructions: Resend confirmation instructions
+    mailer:
+      confirmation_instructions:
+        welcome: Welcome
+        confirm_account_email: 'You can confirm your account email through the link below:'
+      email_chaged:
+        welcome: Hello
+        contacting_to_notify: We're contacting you to notify you that your email is being changed to
+      password_change:
+        welcome: Hello
+        contacting_to_notify: We're contacting you to notify you that your password has been changed.
+      reset_password_instructions:
+        welcome: Hello
+        someone_requested: Someone has requested a link to change your password. You can do this through the link below.
+        change_password: Change my password
+        didnt_request: If you didn't request this, please ignore this email.
+        access_link_to_change: Your password won't change until you access the link above and create a new one.
+      unlock_instructions:
+        welcome: Hello
+        account_locked: Your account has been locked due to an excessive number of unsuccessful sign in attempts.
+        click_to_unlock: 'Click the link below to unlock your account:'
+        unlock_account: Unlock my account
+    passwords:
+      edit:
+        title: Change your password
+        change_password: Change my password
+      new:
+        title: Forgot your password?
+        send_instructions: Send me reset password instructions
+  categories:
+    form_modal:
+      create: Create category
+      edit: Edit category
+      close_btn: Close
+    no_categories:
+      empty: Looks like you don't have categories
+      add: Add first category
+    category:
+      edit: Edit
+      delete: Delete
+      are_you_sure: Are you sure? This will delete all related events.
+    table:
+      name: Name
+      add: Add category
+    index:
+      title: Categories
+  events:
+    table:
+      name: Name
+      category: Category
+      event_time: Event time
+      reminder_time: Reminder time
+      create: Create event
+    form_modal:
+      create: Create event
+      edit: Edit event
+      close_btn: Close
+    no_events:
+      empty: There are no events here
+      add: Create event
+    event:
+      edit: Edit
+      delete: Delete
+      are_you_sure: Are you sure?
+    index:
+      title: Events
+    weather_widget:
+      example_city: Grodno
+  shared:
+    about_event_widget:
+      about_event: About event
+      no_description: Place for your description
+      back_link: Back to events
+    events_search:
+      name: Name
+      select_category: Select category
+      search: Search
+  archive:
+    index:
+      title: Archive
+      back_link: Back
+    table:
+      delete_all_btn: Delete all
+      are_you_sure: Are you sure? This will delete archived events.
+  events_validator:
+    event_time_in_past: can't be in the past
+    reminder_time_after_event_time: can't be after event time
+    reminder_time_in_past: can't be in the past
+  kaminari:
+    first_page:
+      first: First
+    last_page:
+      last: Last
+    next_page:
+      next: Next
+    prev_page:
+      previous: Previous
+    gap:
+      truncate: '...'
+  user_notifier_mailer:
+    remind_about_event:
+      title: Upcoming Event Notification
+      greeting: "Dear %{name},"
+      event_is_coming: Your event is just around the corner, and we want to make sure you have all the details you need.
+      event_details: 'Event Details: '
+      event_name: 'Event name: '
+      date: 'Date: '
+      description: 'Description:'
+      best_regards: Best regards,
+      company_sender: Event Manager
+  layouts:
+    header:
+      app_name: Event planner
+    locales:
+      language: Language
+      en: EN
+      ru: RU
+    not_authorized_nav:
+      sign_in: Sign in
+      sign_up: Sign up
+    authorized_nav:
+      categories: Categories
+      events: Events
+      archive: Archive
+      profile_drop:
+        edit: Edit profile
+        sign_out: Sign out
+    footer:
+      see_other: 'See my other projects:'

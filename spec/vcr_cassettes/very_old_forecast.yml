@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.ambeedata.com/weather/history/by-lat-lng?from=2023-10-09%2017:00:00&lat=<LAT>&lng=<LNG>&to=2023-10-09%2017:00:00&units=si
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Api-Key:
+      - "<AMBEE_API_KEY>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '100'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Content-Security-Policy:
+      - 'default-src ''self'';base-uri ''self'';block-all-mixed-content;font-src ''self''
+        https: data:;frame-ancestors ''self'';img-src ''self'' data:;object-src ''none'';script-src
+        ''self'';script-src-attr ''none'';style-src ''self'' https: ''unsafe-inline'';upgrade-insecure-requests'
+      X-Dns-Prefetch-Control:
+      - 'off'
+      Expect-Ct:
+      - max-age=0
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      X-Download-Options:
+      - noopen
+      X-Content-Type-Options:
+      - nosniff
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - no-referrer
+      X-Xss-Protection:
+      - '0'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept
+      Content-Language:
+      - en
+      Etag:
+      - W/"64-EW6NZ0eP7UM9GzX9BD2fg93GDSc"
+      Date:
+      - Fri, 13 Oct 2023 11:40:24 GMT
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 f4021b1aef9bacd347e69fce08bd4964.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - WAW51-P1
+      X-Amz-Cf-Id:
+      - 2kxSUFoTrR0dlq_f2QvL3QoExMHAnHOS2El4bwDDve4dkuqq_cEsfg==
+    body:
+      encoding: UTF-8
+      string: '{"message":"Only past 2 days data available!, please reach out to contactus@getambee.com","data":[]}'
+  recorded_at: Fri, 13 Oct 2023 11:40:24 GMT
+recorded_with: VCR 6.2.0

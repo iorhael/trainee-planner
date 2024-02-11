@@ -1,0 +1,17 @@
+<% if @events.empty? %>
+<div class="text-center p-4">
+  <h2><%= t('events.no_events.empty') %></h2>
+  <%= link_to t('.back_link'), :back, class: "btn btn-primary" %>
+</div>
+<% else %>
+  <div class="container p-2 text-center">
+    <p class="fs-1"><%= t('.title') %></p>
+
+    <%= form_with url: archive_index_path, method: :get, id: 'archive-search-form' do |form| %>
+      <%= render partial: 'shared/events_search', locals: { f: form } %>
+    <% end %>
+
+    <%= render partial: 'table' %>
+    <%= paginate @events %>
+  </div>
+<% end %>

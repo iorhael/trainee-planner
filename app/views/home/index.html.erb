@@ -1,0 +1,5 @@
+<% if current_user %>
+  <%= render partial: 'authorized' %>
+<% else %>
+  <%= render partial: 'not_authorized' %>
+<% end %>
