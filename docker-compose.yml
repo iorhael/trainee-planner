@@ -1,19 +1,29 @@
 version: '3.8'
 
+x-defaults: &defaults
+  build: .
+  environment:
+    - POSTGRES_HOST=db
+    - REDIS_HOST=redis
+  env_file:
+    - ./.env
+  depends_on:
+    - db
+    - redis
+  volumes:
+    - .:/app
+
 services:
   app:
+    <<: *defaults
     container_name: planner_app
-    build: .
-    environment:
-      - POSTGRES_HOST=db
-    env_file:
-      - ./.env
-    depends_on:
-      - db
-    volumes:
-      - .:/app
     ports:
       - 3000:3000
+
+  sidekiq:
+    <<: *defaults
+    container_name: planner_sidekiq
+    command: bundle exec sidekiq -C config/sidekiq.yml
 
   db:
     container_name: postgres_db
@@ -21,6 +31,16 @@ services:
     env_file:
      - ./.env
     volumes:
-      - ./postgres_db:/var/lib/postgresql/data
+      - ./tmp/postgres_db:/var/lib/postgresql/data
     ports:
       - 5433:5432
+
+  redis:
+    container_name: redis_db
+    image: redis:7.2.4
+    env_file:
+      - ./.env
+    volumes:
+      - ./tmp/redis_db:/var/lib/redis/data
+    ports:
+      - 6380:6379
