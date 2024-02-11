@@ -26,7 +26,7 @@ Rails.application.configure do
     config.action_controller.enable_fragment_cache_logging = true
 
     config.cache_store = :redis_cache_store,
-                         { url: ENV.fetch('REDIS_URL', 'redis://localhost:6379'), db: ENV.fetch('CACHE_DB', 0) }
+                         { host: ENV.fetch('REDIS_HOST', 'localhost'), db: ENV.fetch('CACHE_DB', 0) }
     config.public_file_server.headers = {
       'Cache-Control' => "public, max-age=#{2.days.to_i}"
     }
