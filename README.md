@@ -26,15 +26,11 @@ Web application built on Ruby on Rails that will help you manage events with ple
 
 ## Necessary Tools
 Before using the application, make sure you have installed:
-* [asdf](https://github.com/asdf-vm/asdf)
 * [Ruby 3.2.2](https://gist.github.com/pboksz/4649025)
-* [Ruby on Rais 7+](https://rubygems.org/gems/rails/versions/7.0.6)
 * [Bundler](https://rubygems.org/gems/bundler/versions/2.4.18)
 * [PostgreSQL](https://www.postgresql.org/download/)
 * [Redis](https://redis.io/docs/install/install-redis/)
 * [Docker](https://docs.docker.com/engine/install/)
-* [Nodejs](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
-* [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/#debian-stable)
 
 (You only need [Docker](https://docs.docker.com/engine/install/) if you don't plan to run the application locally)
 
@@ -66,8 +62,6 @@ You can run the project in two ways: [Locally](#locally) or in [Docker-way](#doc
 1. First, let's install the dependencies:  
 ```sh
 $ bundle install
-$ yarn install
-$ yarn run build
 ```
 2. Then you should create the databases defined in the current environment, run pending migrations and fill the current database with data defined in `db/seeds.rb`:  
 ```sh
