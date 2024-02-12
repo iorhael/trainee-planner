@@ -12,6 +12,7 @@ x-defaults: &defaults
     - redis
   volumes:
     - .:/app
+    - /etc/localtime:/etc/localtime:ro
 
 services:
   app:
@@ -31,7 +32,7 @@ services:
     env_file:
      - ./.env
     volumes:
-      - ./tmp/postgres_db:/var/lib/postgresql/data
+      - postgres-data:/var/lib/postgresql/data
     ports:
       - 5433:5432
 
@@ -41,6 +42,10 @@ services:
     env_file:
       - ./.env
     volumes:
-      - ./tmp/redis_db:/var/lib/redis/data
+      - redis-data:/var/lib/redis/data
     ports:
       - 6380:6379
+
+volumes:
+  postgres-data:
+  redis-data:
